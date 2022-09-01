@@ -59,6 +59,4 @@ export const items = [
         title: 'agua',
         text: 'superagua'
     },
-
-
 ]
