@@ -2,7 +2,7 @@ import React from 'react'
 import { Card,Button} from 'react-bootstrap'
 import Col from 'react-bootstrap/Col';
 
-import './style.css'
+
 
 
 function index(){
