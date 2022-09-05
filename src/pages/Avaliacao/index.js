@@ -50,6 +50,18 @@ function index() {
               Profissional, correspondendo à carga horária suplementar de 120 horas a 
               serem certificadas no Histórico Escolar.
             </p>
+            <InputGroup className="mb-3" >
+              <InputGroup.Text>RS do Professor Responsável:</InputGroup.Text>
+              <Form.Control  />
+            </InputGroup>
+            <InputGroup className="mb-3" >
+              <InputGroup.Text>Data:</InputGroup.Text>
+              <Form.Control type='date'/>
+            </InputGroup>
+            <InputGroup className="mb-3" >
+              <InputGroup.Text>VALIDAÇÃO DO TRABALHO DE CONCLUSÃO DE CURSO – TCC – ANO:</InputGroup.Text>
+              <Form.Control />
+            </InputGroup>
           </div>
         </div>
       </div>

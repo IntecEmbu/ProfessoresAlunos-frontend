@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import Login from './pages/Login';
 import Main from './pages/Main';
 import Avaliacao from './pages/Avaliacao';
 import Observatorio from './pages/Observatorio';
@@ -7,7 +8,7 @@ import Observatorio2 from './pages/Observatorio2';
 import Feedback1 from './pages/FeedBack1';
 import Feedback2 from './pages/FeedBack2';
 import Erro from './pages/Erro';
-import Header from './components/Header';
+import Header from './components/Header/index.js';
 import Footer from './components/Footer/index.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //import ProtectedRouter from './protectedRouter';
@@ -21,6 +22,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Main/>}/>
+            <Route path='/Login' element={<Login/>}/>
             <Route path='/Avaliacao' element={<Avaliacao/>}/>
             <Route path='/Feedback1' element={<Feedback1/>}/>
             <Route path='/Feedback2' element={<Feedback2/>}/>

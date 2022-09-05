@@ -1,15 +1,26 @@
-.HeaderLink{
-    color: #000;
-    text-decoration: none;
-    transition: 0.3s;
-  } 
-  
-  a:hover, .HeaderLink :hover {
-    color: rgb(0, 0, 0) !important;
-  }
-  
-  .HeaderLogo{
-    width: 2%;
-    height: 2%;
-  }
-  
+.teste{
+  justify-items: left;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
+.HeaderLogo {
+  width: 2%;
+  height: 2%;
+}
+
+.HeaderLink {
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover,
+.HeaderLink :hover {
+  color: rgb(133, 133, 133) !important;
+  transition: 0.3s;
+
+}
+
