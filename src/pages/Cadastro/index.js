@@ -44,7 +44,7 @@ function index() {
                         <Form.Check type="checkbox" label="Li e concordo com os termos de uso"  className='checkbox'/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Entrar
+                       Cadastrar-se
                     </Button>
                 </Form>
             </div>

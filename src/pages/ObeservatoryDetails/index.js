@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 function index(){
     return(
+        <>
     <div className='linha'>
         <h5 className='title'>titulo</h5>
         <Col>
@@ -16,6 +17,7 @@ function index(){
             </Card>
         </Col>
     </div>
+    </>
     );
 }
 

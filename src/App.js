@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import Main from './pages/Main';
 import Avaliacao from './pages/Avaliacao';
+import Avaliacao2 from './pages/Avaliacao2';
 import Observatorio from './pages/Observatorio';
 import Observatorio2 from './pages/Observatorio2';
 import Feedback1 from './pages/FeedBack1';
@@ -26,6 +27,7 @@ function App() {
             <Route path='/Cadastro' element={<Cadastro/>}/>
             <Route path='/Login' element={<Login/>}/>
             <Route path='/Avaliacao' element={<Avaliacao/>}/>
+            <Route path='/Avaliacoes' element={<Avaliacao2/>}/>
             <Route path='/Feedback1' element={<Feedback1/>}/>
             <Route path='/Feedback2' element={<Feedback2/>}/>
             <Route path='/Observatorio' element={<Observatorio/>}/>

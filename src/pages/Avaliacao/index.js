@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
@@ -62,6 +61,7 @@ function index() {
               <InputGroup.Text>VALIDAÇÃO DO TRABALHO DE CONCLUSÃO DE CURSO – TCC – ANO:</InputGroup.Text>
               <Form.Control />
             </InputGroup>
+            <Button className='btn-avaliacao'>Enviar</Button>
           </div>
         </div>
       </div>
