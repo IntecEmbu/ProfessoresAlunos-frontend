@@ -1,0 +1,15 @@
+.cadastro-cont{
+    width: 50vw;
+    height:  fit-content;
+    padding: 2rem;
+    background-color: #fff;
+    margin-top: 7%;
+    margin-left: 25%;
+    border-radius: 2%;
+
+}
+
+.cadastro-Logo{
+    width: 8rem;
+    height: 6rem; 
+}

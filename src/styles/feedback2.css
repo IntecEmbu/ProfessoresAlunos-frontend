@@ -13,7 +13,7 @@
 .containerFeed{
     background-color: #fff;
     width: 50vw;
-    height: 60vh;
+    max-height: 60vh;
     margin-top: 10%;
     margin-left: 22%;
 }

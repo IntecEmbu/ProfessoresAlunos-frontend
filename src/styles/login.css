@@ -1,9 +1,9 @@
 .login-cont{
     width: 30vw;
-    height: 65vh;
+    height: fit-content;
     padding: 5rem;
     background-color: #fff;
-    margin-top: 10%;
+    margin-top: 7%;
     margin-left: 35%;
     border-radius: 2%;
     box-shadow: 1rem 1rem 2rem rgb(6, 7, 19);
@@ -11,8 +11,7 @@
 
 .Login-Logo{
     width: 8rem;
-    height: 6rem;
-    margin-bottom: 20%;
+    height: 6rem;     
 }
 
 .checkbox{

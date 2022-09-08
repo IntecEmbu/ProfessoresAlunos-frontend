@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
 import Main from './pages/Main';
 import Avaliacao from './pages/Avaliacao';
 import Observatorio from './pages/Observatorio';
@@ -22,6 +23,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Main/>}/>
+            <Route path='/Cadastro' element={<Cadastro/>}/>
             <Route path='/Login' element={<Login/>}/>
             <Route path='/Avaliacao' element={<Avaliacao/>}/>
             <Route path='/Feedback1' element={<Feedback1/>}/>
