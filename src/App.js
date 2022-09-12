@@ -9,6 +9,7 @@ import Observatorio from './pages/Observatorio';
 import Observatorio2 from './pages/Observatorio2';
 import Feedback1 from './pages/FeedBack1';
 import Feedback2 from './pages/FeedBack2';
+import Feedback3 from './pages/Feedback3';
 import Erro from './pages/Erro';
 import Header from './components/Header/index.js';
 import Footer from './components/Footer/index.js';
@@ -30,6 +31,7 @@ function App() {
             <Route path='/Avaliacoes' element={<Avaliacao2/>}/>
             <Route path='/Feedback1' element={<Feedback1/>}/>
             <Route path='/Feedback2' element={<Feedback2/>}/>
+            <Route path='/Feedback3' element={<Feedback3/>}/>
             <Route path='/Observatorio' element={<Observatorio/>}/>
             <Route path='/Observatorio/Detalhes' element={<Observatorio2/>}/>
             <Route path='*' element={<Erro/>}/>
