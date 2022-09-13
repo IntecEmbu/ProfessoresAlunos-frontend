@@ -1,9 +1,9 @@
 .linha{
-    margin:auto;
+    margin:2rem 2rem 2rem 2rem;
     margin-top: 2rem;
     padding: 2rem;
     border: solid 2px #fff;
-    width: 190vh;
+    width: fit-content;
     height: fit-content;
   }
   

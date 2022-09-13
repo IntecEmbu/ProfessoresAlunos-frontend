@@ -3,15 +3,15 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import TextArea from '../../components/TextArea/index.js';
-import '../../styles/main.css';
 import '../../styles/avaliacao.css';
+
 
 
 
 function index() {
   return (
     <>
-      <div className='linha'>
+      <div className='cont-pai'>
         <div className='doc-pag'>
           <header className='doc-header'>
             <h2 className='doc-name'>FICHA DE AVALIAÇÃO DO TCC </h2>

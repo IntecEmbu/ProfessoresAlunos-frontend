@@ -1,10 +1,20 @@
+.cont-pai{
+    margin: 2rem 2rem 2rem 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    border: solid 2px #fff;
+    width: 85rem;
+    height: fit-content;
+
+}
+
+
 .doc-pag{
   padding: 1rem;
   background-color: #fff;
   max-width: 105vh;
-  height: fit-content;
-  margin-top: 10%;
-  margin-left: 22%;
+  margin-top: 2rem;
+  margin-left: 15rem;
   box-shadow:  10px 10px 20px;;
 }
 
