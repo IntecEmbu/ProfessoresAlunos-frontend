@@ -1,49 +1,51 @@
-.cont-pai{
-    margin: 2rem 2rem 2rem 2rem;
-    margin-top: 2rem;
-    padding: 2rem;
-    border: solid 2px #fff;
-    width: 85rem;
-    height: fit-content;
+.cont-pai {
+  display: flex;
+  margin: 2rem 2rem 2rem 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  border: solid 2px #fff;
+  width: 95%;
+  height: fit-content;
 
 }
 
 
-.doc-pag{
+.doc-pag {
   padding: 1rem;
   background-color: #fff;
   max-width: 105vh;
   margin-top: 2rem;
   margin-left: 15rem;
-  box-shadow:  10px 10px 20px;;
+  box-shadow: 10px 10px 20px;
+  ;
 }
 
-.doc-header{
+.doc-header {
   text-align: left;
   font-size: 15px;
 }
 
-.doc-name{
+.doc-name {
   text-align: center;
   margin: 2rem;
 }
 
-.doc-body{
+.doc-body {
   text-align: center;
 }
 
-.doc-text{
+.doc-text {
   font-size: 20px;
   text-align: justify;
   margin-top: 1rem;
 }
 
-.doc-text-obg{
+.doc-text-obg {
   font-size: 20px;
   text-align: center;
   margin-top: 1rem;
 }
 
-.btn-avaliacao{
+.btn-avaliacao {
   margin-top: 2%;
 }

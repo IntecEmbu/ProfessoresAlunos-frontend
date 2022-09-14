@@ -1,4 +1,34 @@
-.btnMargin{
+.contanier-obs{
+    display: flex;
+    margin: 2rem 2rem 2rem 2rem;
+    margin-top: 2rem;
     padding: 2rem;
-    margin-left: 90%;
+    border: solid 2px #fff;
+    width: fit-content;
+    height: fit-content;
+  }
+
+.header-obs{
+    display: flex;
+    flex-direction:row;
+    gap: 2rem ;
+    margin-bottom: 2rem;
+    max-width: fit-content ;
 }
+
+.btn-criar{
+    margin-left: 50rem;
+}
+
+.header-obs2{
+    margin-bottom: 2rem;
+    margin-left: 20rem;
+    justify-content: left;
+}
+
+.Intecobs{
+    color: #fff;
+    text-decoration: underline 10%;
+    margin-right: 20rem;
+}
+

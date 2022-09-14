@@ -13,7 +13,7 @@ function index() {
             <div className='pai'>
                 <h1 className='IntecFeed'>INTEC FEEDBACK</h1>
                 <div className='containerFeed'>
-                    <header className='FormHeader'>
+                    <header className='Form-header'>
                         <div className='cont-pesquisa'>
                             <Pesquisa className='pesquisa-avaliacao' />
                             <Link to='/Feedback3'>

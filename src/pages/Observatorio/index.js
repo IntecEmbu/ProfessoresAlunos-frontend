@@ -5,23 +5,23 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { items } from './items.js';
-import '../../styles/main.css';
+import '../../styles/observatorio.css';
 
 
 
 function index() {
   console.log(items)
   return (
-    <div className='linha'>
-      <main >
-        <header>
+    <div className='contanier-obs'>
+      <main className='main-obs' >
+        <header className='header-obs'>
           <Pesquisa />
-          <Button variant="outline-secondary" id="button-addon2">
+          <Button variant="primary" className='btn-criar'>
             Criar Documento
           </Button>
         </header>
         <Container fluid >
-          <Row xs={1} md={3} >
+          <Row xs={1} md={4} >
             {items.map(item => {
               return (
                 <ItemObs
@@ -33,7 +33,6 @@ function index() {
             })}
           </Row>
         </Container>
-
       </main>
     </div>
   )

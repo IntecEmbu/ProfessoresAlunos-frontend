@@ -30,11 +30,10 @@ function index() {
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <td>3 DSN</td>
+                                    <td>2022</td>
                                     <td>
-                                        <Link to='/avaliacao'>
+                                        <Link to='/Feedback1'>
                                             <Button>Acessar</Button>
                                         </Link>
                                     </td>

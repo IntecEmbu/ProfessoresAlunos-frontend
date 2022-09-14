@@ -4,28 +4,32 @@
 }
 
 .pai{
+    display: flex;
+    flex-direction: column;
     margin: 2rem;
     padding: 2rem;
     border: solid 2px #fff;
     height: fit-content;
-      
-    
+    justify-content: center;
+
 }
   
 .containerFeed{
     background-color: #fff;
     width: 50vw;
     height: 60vh;
-    margin-top: 10%;
-    margin-left: 22%;
+    
+}
+.Form-header{
+    display: flex;
+    padding: 1rem;
+    background-color: rgb(10, 1, 145);
 }
 
-.FormHeader{
-    background-color: rgb(10, 1, 145);
-    height: 12%;
-    text-align: left;
-    justify-items: right;
-    padding: 0.1rem;
+.cont-pesquisa{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
 }
 
 .alunofeed{
