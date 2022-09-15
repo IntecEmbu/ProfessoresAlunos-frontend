@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Btn from '../../components/BotaoFlutuante'
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import TextArea from '../../components/TextArea/index.js';
@@ -11,6 +12,7 @@ import '../../styles/avaliacao.css';
 function index() {
   return (
     <>
+      <Btn/>
       <div className='cont-pai'>
         <div className='doc-pag'>
           <header className='doc-header'>

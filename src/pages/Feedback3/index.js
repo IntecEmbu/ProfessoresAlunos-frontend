@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import Btn from '../../components/BotaoFlutuante';
 import Pesquisa from '../../components/Pesquisa/index.js';
 import Table from 'react-bootstrap/Table';
 import '../../styles/feedback1.css';
@@ -10,6 +11,7 @@ import '../../styles/avaliacao2.css';
 function index() {
     return (
         <>
+            <Btn/>
             <div className='pai'>
                 <h1 className='IntecFeed'>INTEC FEEDBACK</h1>
                 <div className='containerFeed'>

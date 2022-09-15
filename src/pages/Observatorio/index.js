@@ -1,5 +1,6 @@
 import React from 'react';
 import Pesquisa from '../../components/Pesquisa/index.js';
+import Btn from '../../components/BotaoFlutuante';
 import ItemObs from '../../components/ItemObesrvatorio/index.js';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
@@ -12,29 +13,34 @@ import '../../styles/observatorio.css';
 function index() {
   console.log(items)
   return (
-    <div className='contanier-obs'>
-      <main className='main-obs' >
-        <header className='header-obs'>
-          <Pesquisa />
-          <Button variant="primary" className='btn-criar'>
-            Criar Documento
-          </Button>
-        </header>
-        <Container fluid >
-          <Row xs={1} md={4} >
-            {items.map(item => {
-              return (
-                <ItemObs
-                  src={item.src}
-                  title={item.title}
-                  text={item.text}
-                />
-              );
-            })}
-          </Row>
-        </Container>
-      </main>
-    </div>
+    <>
+      <Btn />
+      <div className='contanier-obs'>
+        <main className='main-obs' >
+          <header className='header-obs'>
+            <Pesquisa />
+            <Button variant="primary" className='btn-criar'>
+              Criar Documento
+            </Button>
+          </header>
+          <body className='body-obs'>
+            <Container fluid >
+              <Row xs={1} md={4} >
+                {items.map(item => {
+                  return (
+                    <ItemObs
+                      src={item.src}
+                      title={item.title}
+                      text={item.text}
+                    />
+                  );
+                })}
+              </Row>
+            </Container>
+          </body>
+        </main>
+      </div>
+    </>
   )
 }
 

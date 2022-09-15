@@ -1,4 +1,5 @@
 import React from 'react';
+import Btn from '../../components/BotaoFlutuante';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Pesquisa from '../../components/Pesquisa/index.js';
@@ -10,6 +11,7 @@ import '../../styles/avaliacao2.css';
 function index() {
     return (
         <>
+            <Btn/>
             <div className='pai'>
                 <h1 className='IntecFeed'>INTEC AVALIAÇÕES</h1>
                 <div className='containerFeed'>
