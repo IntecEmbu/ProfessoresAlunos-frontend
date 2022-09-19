@@ -1,6 +1,3 @@
-.teste{
-  justify-items: left;
-}
 
 .navbar-collapse {
   flex-grow: 0 !important;
@@ -12,7 +9,7 @@
 }
 
 .HeaderLink {
-  color: #000;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -23,4 +20,6 @@ a:hover,
   transition: 0.3s;
 
 }
+
+
 

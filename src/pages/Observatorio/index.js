@@ -14,7 +14,7 @@ function index() {
   console.log(items)
   return (
     <>
-      <Btn />
+    <Btn/>
       <div className='contanier-obs'>
         <main className='main-obs' >
           <header className='header-obs'>
@@ -40,6 +40,7 @@ function index() {
           </body>
         </main>
       </div>
+      
     </>
   )
 }

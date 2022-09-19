@@ -14,7 +14,6 @@ function index() {
         <Container className='teste'>
           <img className="HeaderLogo" src={Imagem} />
           <Navbar.Brand ><Link to='/' className='HeaderLink'>INTEC</Link></Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav.Link> <Link to='/Login' className='HeaderLink'>Login</Link> </Nav.Link>
             <Nav.Link> <Link to='/Cadastro' className='HeaderLink'>Cadastrar</Link> </Nav.Link>

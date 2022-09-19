@@ -20,9 +20,14 @@ function index() {
             <h1 className='Intecobs'>INTEC OBSERVATÓRIO</h1>
           </header>
           <body className='body-obs'>
-            <Button variant="primary">
-              Adicionar Documento
-            </Button>
+            <div className='btns-header'>
+              <Button variant="primary" >
+                Adicionar Documento
+              </Button>
+              <Button variant="danger" >
+                Exluir Documento
+              </Button>
+            </div>
             <Container fluid >
               <Row xs={1} md={4} >
                 {adicoes.map(item => {
@@ -34,9 +39,7 @@ function index() {
                 })}
               </Row>
             </Container>
-            <div className='testeArea'>
-              <TextArea />
-            </div>
+            <TextArea />
           </body>
         </main>
       </div>

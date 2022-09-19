@@ -7,24 +7,18 @@
     width: fit-content;
     height: fit-content;
 }
-.main-obs{
-    justify-content: space-between;
-    max-width: 100vw;
-    padding: 5rem;
-}
 
 .body-obs{
     background-color: transparent;
-    justify-content: right;
 }
 
 .header-obs{
     display: flex;
     flex-direction:row;
     justify-content: space-between;
-    gap: 65vw ;
+    gap: 2rem;
     margin-bottom: 2rem;
-    max-width: fit-content ;
+    max-width: 100% ;
 }
 
 .header-obs2{
@@ -40,11 +34,8 @@
     margin-right: 20rem;
 }
 
-.testeArea{
-    padding: 1rem;
-
+.btns-header{
+    margin-bottom: 2rem;
 }
 
-.form-control{
-    width: 94% !important;
-}
+

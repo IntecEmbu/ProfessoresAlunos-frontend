@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../StyleComponents/btn.css';
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import Imagem from '../Imagens/branco.png';
+import { BsFillHouseFill } from "react-icons/bs";
 
 
 
@@ -10,9 +11,11 @@ function index() {
     <>
       <div className='cont-btn'>
         <Link to='/' className='btnLink'>
-          <BsFillArrowLeftCircleFill  size={'3em'} />
+          <BsFillHouseFill size={'3em'}  className='btn-color'/>
         </Link>
+        <p className='p-style'>Sair</p>
       </div>
+
     </>
   )
 }

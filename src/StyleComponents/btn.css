@@ -1,12 +1,24 @@
 .cont-btn{
   position: fixed;
-  margin-top: 5rem;
-  margin-left: 5rem;
-
-  color: #fff !important;
-  
+  margin-top: 1rem;
+  margin-left: 13px;
+  z-index: 99;
+  font-size: smaller;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100vw;
 }
 
-.btn-link{
-  color: #fff !important;
+.p-style{
+  color: #0b1d3f;
+  font-weight: bold;
+  font-size: smaller;
+  justify-content: center;
+  align-items: center;
+
 }
+
+.btn-color{
+  margin-top: 10px;
+  color:  #0b1d3f;
+}
+
