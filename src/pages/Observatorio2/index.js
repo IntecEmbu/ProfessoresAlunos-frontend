@@ -7,7 +7,7 @@ import Adicoes from '../../components/ObservatorioDetalhes/index.js';
 import TextArea from '../../components/TextArea/index.js';
 import { adicoes } from './Adicoes.js';
 import '../../styles/observatorio.css';
-import  api from '../../config/configApi.js'
+import api from '../../config/configApi.js'
 
 
 function Index() {
@@ -58,19 +58,17 @@ function Index() {
         <main className='main-obs'>
           <header className='header-obs2'>
             <h1 className='Intecobs'>INTEC OBSERVATÓRIO</h1>
-            {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
-            {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
-
-            <form onSubmit={uploadImage} className='upload'>
-              <label >Imagem: </label>
-              <input type="file" name="image" className='btnMargin' onChange={e => setImage(e.target.files[0])} /><br /><br />
-
-              {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={endImg} alt="Imagem" width="150" height="150" />}
-
-              <Button variant="outline-secondary" type="submit" className='btnMargin' >
-                Salvar
-              </Button>
-            </form>
+            <div className="btn-img-cont">
+              {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
+              {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
+              <form onSubmit={uploadImage} className='upload'>
+                {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="200" height="200" /> : <img src={endImg} alt="Imagem" width="150" height="150" />}<br></br>
+                <input type="file" name="image" className='btnMargin' onChange={e => setImage(e.target.files[0])} />
+                <Button variant="primary" type="submit" className='btnMargin' >
+                  Salvar
+                </Button>
+              </form>
+            </div>
           </header>
           <body className='body-obs'>
             <Container fluid >

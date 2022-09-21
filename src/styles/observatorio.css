@@ -24,18 +24,30 @@
 .header-obs2{
     max-width: 100vw;
     margin-bottom: 2rem;
-    margin-left: 20rem;
-    
+    justify-content: center;
+    text-align: center;
 }
 
 .Intecobs{
     color: #fff;
     text-decoration: underline 10%;
-    margin-right: 20rem;
-}
-
-.btns-header{
-    margin-bottom: 2rem;
+   
 }
 
 
+.btn-img-cont{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem ;
+    justify-content: center;
+}
+
+.btnMargin{
+    color: #ffffff;
+    gap: 2rem;
+}
+
+.upload{
+   
+    gap: 2rem;
+}
