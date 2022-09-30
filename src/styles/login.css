@@ -17,3 +17,8 @@
 .checkbox{
     font-size: smaller;
 }
+
+#box-check {
+    float: none;
+    margin-left: none;
+}

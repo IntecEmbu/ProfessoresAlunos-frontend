@@ -70,19 +70,17 @@ function Index() {
     <>
       <Btn />
       <div className='contanier-obs2'>
-        <header>
+        <header className='header-obs2'>
           {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
           {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
-
-          <form onSubmit={UploadImage} className='upload'>
+          
+          <form onSubmit={UploadImage}>
             <label >Imagem: </label>
             <input type="file" name="image" className='btnMargin' onChange={e => setImage(e.target.files[0])} /><br /><br />
 
             {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={endImg} alt="Imagem" width="150" height="150" />}
 
-            <Button variant="outline-secondary" type="submit" className='btnMargin' >
-              Adicionar documento
-            </Button>
+            <Button variant="primary" type="submit" className='btnMargin'>Adicionar documento</Button>
           </form>
         </header>
         <main>

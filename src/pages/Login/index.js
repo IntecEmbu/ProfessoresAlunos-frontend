@@ -21,7 +21,7 @@ function index() {
                         <Form.Control type="password" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Li e concordo com os termos de uso"  className='checkbox'/>
+                        <Form.Check type="checkbox" label="Li e concordo com os termos de uso" id="box-check"/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Entrar
