@@ -5,6 +5,7 @@
     background-color: #fff;
     margin-top: 7%;
     margin-left: 25%;
+    margin-bottom: 11%;
     border-radius: 2%;
 
 }
@@ -12,4 +13,21 @@
 .cadastro-Logo{
     width: 8rem;
     height: 6rem; 
+    margin-bottom: 15px;
+}
+
+
+.tittle-cad{
+    margin-bottom: 2rem;
+}
+
+.flex-field{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.form-check .form-check-input {
+    float: none !important; 
+    margin-left: none !important; 
 }

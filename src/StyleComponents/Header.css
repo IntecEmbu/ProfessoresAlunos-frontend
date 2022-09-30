@@ -4,22 +4,38 @@
 }
 
 .HeaderLogo {
-  width: 5%;
-  height: 5%;
+  width: 4rem;
+  height: 3rem;
+  margin-left: -10%;
 }
 
 .HeaderLink {
   color: rgb(0, 0, 0);
   text-decoration: none;
   transition: 0.3s;
+  margin-right: 30rem;
+}
+
+.Header-cad, .Header-log{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.justify_tittle {
+  position: relative;
+  text-align:center;
+  display: flex;
+  transform: translateX(-5%);
 }
 
 a:hover,
 .HeaderLink :hover {
   color: rgb(133, 133, 133) !important;
   transition: 0.3s;
-
 }
+
+
 
 
 

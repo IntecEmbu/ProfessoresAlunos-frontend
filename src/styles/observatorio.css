@@ -21,33 +21,4 @@
     max-width: 100% ;
 }
 
-.header-obs2{
-    max-width: 100vw;
-    margin-bottom: 2rem;
-    justify-content: center;
-    text-align: center;
-}
 
-.Intecobs{
-    color: #fff;
-    text-decoration: underline 10%;
-   
-}
-
-
-.btn-img-cont{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem ;
-    justify-content: center;
-}
-
-.btnMargin{
-    color: #ffffff;
-    gap: 2rem;
-}
-
-.upload{
-   
-    gap: 2rem;
-}

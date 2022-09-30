@@ -11,14 +11,14 @@ function index() {
   return (
     <>
       <Navbar bg="white" expand="lg">
-        <Container className='teste'>
-          <img className="HeaderLogo" src={Imagem} />
-          <Navbar.Brand ><Link to='/' className='HeaderLink'>INTEC</Link></Navbar.Brand>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav.Link> <Link to='/Login' className='HeaderLink'>Login</Link> </Nav.Link>
-            <Nav.Link> <Link to='/Cadastro' className='HeaderLink'>Cadastrar</Link> </Nav.Link>
-          </Navbar.Collapse>
+        <Container className='justify_tittle' >
+          <Link to='/' className="HeaderLogo"><img className="HeaderLogo" src={Imagem} /></Link>
+          <h4 className='HeaderLink'>INTEC</h4>
         </Container>
+
+        <Nav.Link> <Link to='/Login' className='Header-cad'>Login</Link> </Nav.Link>
+        <Nav.Link> <Link to='/Cadastro' className='Header-log'>Cadastrar</Link> </Nav.Link>
+
       </Navbar>
 
 

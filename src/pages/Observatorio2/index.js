@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Btn from '../../components/BotaoFlutuante';
-import Adicoes from '../../components/ObservatorioDetalhes/index.js';
 import TextArea from '../../components/TextArea/index.js';
-import { adicoes } from './Adicoes.js';
-import '../../styles/observatorio.css';
+import '../../styles/observatorio2.css';
+import '../../styles/main.css';
 import api from '../../config/configApi.js'
 
 
@@ -18,8 +16,7 @@ function Index() {
     type: '',
     mensagem: ''
   });
-
-  const uploadImage = async e => {
+  const UploadImage = async e => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('image', image);
@@ -49,45 +46,66 @@ function Index() {
           });
         }
       });
-
   }
+  const [data, setData] = useState([]);
+  const [url, setUrl] = useState('');
+
+  const getImages = async () => {
+
+    await api.get("/list-image")
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data.images);
+        setUrl(response.data.url);
+      }).catch((err) => {
+        console.log(err.response);
+      })
+  }
+
+  useEffect(() => {
+    getImages();
+  }, []);
+
   return (
     <>
       <Btn />
-      <div className='contanier-obs'>
-        <main className='main-obs'>
-          <header className='header-obs2'>
-            <h1 className='Intecobs'>INTEC OBSERVATÓRIO</h1>
-            <div className="btn-img-cont">
-              {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
-              {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
-              <form onSubmit={uploadImage} className='upload'>
-                {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="200" height="200" /> : <img src={endImg} alt="Imagem" width="150" height="150" />}<br></br>
-                <input type="file" name="image" className='btnMargin' onChange={e => setImage(e.target.files[0])} />
-                <Button variant="primary" type="submit" className='btnMargin' >
-                  Salvar
-                </Button>
-              </form>
+      <div className='contanier-obs2'>
+        <header>
+          {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
+          {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
+
+          <form onSubmit={UploadImage} className='upload'>
+            <label >Imagem: </label>
+            <input type="file" name="image" className='btnMargin' onChange={e => setImage(e.target.files[0])} /><br /><br />
+
+            {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={endImg} alt="Imagem" width="150" height="150" />}
+
+            <Button variant="outline-secondary" type="submit" className='btnMargin' >
+              Adicionar documento
+            </Button>
+          </form>
+        </header>
+        <main>
+          <Container fluid >
+            <div className="img">
+
+              {data.map(image => (
+                <div key={image.id}>
+                  <img src={url + image.image} alt={image.id} width="150" />
+                  <hr />
+                </div>
+              ))}
+
             </div>
-          </header>
-          <body className='body-obs'>
-            <Container fluid >
-              <Row xs={1} md={4} >
-                {adicoes.map(item => {
-                  return (
-                    <Adicoes
-                      src={item.src}
-                    />
-                  );
-                })}
-              </Row>
-            </Container>
-            <TextArea />
-          </body>
+          </Container>
+          <TextArea />
         </main>
       </div>
     </>
-  )
+  );
+
 }
 
+
 export default Index;
+
