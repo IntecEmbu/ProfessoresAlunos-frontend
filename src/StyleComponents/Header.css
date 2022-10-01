@@ -1,26 +1,38 @@
-
-.navbar-collapse {
-  flex-grow: 0 !important;
+.cont-nav{
+  margin-bottom: 4rem;
 }
 
 .HeaderLogo {
   width: 4rem;
   height: 3rem;
-  margin-left: -10%;
+  margin-left: 1rem;
 }
 
 .HeaderLink {
   color: rgb(0, 0, 0);
   text-decoration: none;
   transition: 0.3s;
-  margin-right: 30rem;
+  margin-right: 14rem;
 }
 
 .Header-cad, .Header-log{
   color: rgb(0, 0, 0);
+  font-size: larger;
   text-decoration: none;
   transition: 0.3s;
 }
+
+.Header-cad :hover, .Header-log :hover{
+  color: rgb(117, 117, 117) !important;
+  text-decoration: none;
+  transition: 0.3s;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+
+}
+
 
 .justify_tittle {
   position: relative;
@@ -29,11 +41,15 @@
   transform: translateX(-5%);
 }
 
-a:hover,
-.HeaderLink :hover {
+ .HeaderLink :hover {
   color: rgb(133, 133, 133) !important;
   transition: 0.3s;
 }
+
+a:hover {
+   color: rgb(133, 133, 133) !important; 
+}
+
 
 
 
