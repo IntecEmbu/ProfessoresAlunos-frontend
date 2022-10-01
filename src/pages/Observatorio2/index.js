@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Btn from '../../components/BotaoFlutuante';
 import TextArea from '../../components/TextArea/index.js';
+import Img from '../../components/Imagens/branco.png';
 import '../../styles/observatorio2.css';
 import '../../styles/main.css';
 import api from '../../config/configApi.js'
@@ -11,7 +12,6 @@ import api from '../../config/configApi.js'
 function Index() {
 
   const [image, setImage] = useState('');
-  const [endImg] = useState('../../../logo192.png');
   const [status, setStatus] = useState({
     type: '',
     mensagem: ''
@@ -70,17 +70,24 @@ function Index() {
     <>
       <Btn />
       <div className='contanier-obs2'>
+        <h1 className='IntecObs'>INTEC OBSERVATÓRIO</h1>
         <header className='header-obs2'>
-          {status.type === 'success' ? <p style={{ color: "green" }}>{status.mensagem}</p> : ""}
+          {status.type === 'success' ? <p style={{ color: "#fff" }}>{status.mensagem}</p> : ""}
           {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
-          
+
           <form onSubmit={UploadImage}>
-            <label >Imagem: </label>
-            <input type="file" name="image" className='btnMargin' onChange={e => setImage(e.target.files[0])} /><br /><br />
 
-            {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={endImg} alt="Imagem" width="150" height="150" />}
 
-            <Button variant="primary" type="submit" className='btnMargin'>Adicionar documento</Button>
+
+           
+            <label for="inputTag" className="input-upload">
+            <img src={Img} alt="Imagem" className='upload-img' />
+              <input id="inputTag" type="file"  onChange={e => setImage(e.target.files[0])}  />
+            </label>
+
+            {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={Img} alt="Imagem" className='upload-img' />}
+
+            <Button variant="primary" type="submit" className="btn-add" >Adicionar documento</Button>
           </form>
         </header>
         <main>
