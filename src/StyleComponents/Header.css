@@ -1,5 +1,6 @@
 .cont-nav{
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .HeaderLogo {
@@ -12,7 +13,8 @@
   color: rgb(0, 0, 0);
   text-decoration: none;
   transition: 0.3s;
-  margin-right: 14rem;
+  margin-right: auto;
+  margin-left: 48%;
 }
 
 .Header-cad, .Header-log{
@@ -38,7 +40,7 @@
   position: relative;
   text-align:center;
   display: flex;
-  transform: translateX(-5%);
+  margin: auto;
 }
 
  .HeaderLink :hover {

@@ -4,18 +4,16 @@
     padding: 5rem;
     background-color: #fff;
     margin-top: 7%;
-    margin-left: 35%;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 2%;
     box-shadow: 1rem 1rem 2rem rgb(6, 7, 19);
 }
 
 .Login-Logo{
     width: 8rem;
-    height: 6rem;     
-}
-
-.checkbox{
-    font-size: smaller;
+    height: 6rem;  
+    margin-bottom: 1rem;   
 }
 
 #box-check {
