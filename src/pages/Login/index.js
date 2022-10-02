@@ -12,17 +12,16 @@ function index() {
             <div className='login-cont'>
                 <img className="Login-Logo" src={Imagem} />
                 <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email"/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Senha</Form.Label>
-                        <Form.Control type="password" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Li e concordo com os termos de uso" id="box-check"/>
-                    </Form.Group>
+                    <div className='form-text'>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="email" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Senha</Form.Label>
+                            <Form.Control type="password" />
+                        </Form.Group>
+                    </div>
                     <Button variant="primary" type="submit">
                         Entrar
                     </Button>
