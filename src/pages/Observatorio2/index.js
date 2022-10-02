@@ -72,22 +72,17 @@ function Index() {
       <div className='contanier-obs2'>
         <h1 className='IntecObs'>INTEC OBSERVATÓRIO</h1>
         <header className='header-obs2'>
-          {status.type === 'success' ? <p style={{ color: "#fff" }}>{status.mensagem}</p> : ""}
-          {status.type === 'error' ? <p style={{ color: "#ff0000" }}>{status.mensagem}</p> : ""}
+          {status.type === 'success' ? <alert style={{ color: "#fff" }}>{status.mensagem}</alert> : ""}
+          {status.type === 'error' ? < alert style={{ color: "#ff0000" }}>{status.mensagem}</alert> : ""}
 
-          <form onSubmit={UploadImage}>
-
-
-
-           
-            <label for="inputTag" className="input-upload">
-            <img src={Img} alt="Imagem" className='upload-img' />
-              <input id="inputTag" type="file"  onChange={e => setImage(e.target.files[0])}  />
+          <form onSubmit={UploadImage} className='form-upload'>
+            <label for="inputTag" className="label-upload">
+              <p>Clique aqui</p>
+              {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={Img} alt="Imagem" className='upload-img' />}
+              <p>Para adicionar uma imagem</p>
+              <input id="inputTag" type="file" onChange={e => setImage(e.target.files[0])} />
             </label>
-
-            {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={Img} alt="Imagem" className='upload-img' />}
-
-            <Button variant="primary" type="submit" className="btn-add" >Adicionar documento</Button>
+            <Button variant="primary" type="submit" >Cofirmar envio</Button>
           </form>
         </header>
         <main>

@@ -4,7 +4,7 @@
   padding: 2rem;
   border: solid 2px #fff;
   width: 190vh;;
-  height: 90vh;
+  height: fit-content;
 }
 
 .header-obs2{
@@ -23,15 +23,9 @@
  
 }
 
-.Input-upload{
-  color: #fff;
-  display: none;
-  
-}
-
 .upload-img{
   width: 10rem;
-  margin-right: 5rem;
+  margin: auto;
   
 }
 
@@ -41,10 +35,23 @@
   margin-bottom: 5rem;
 }
 
-input{
-  display: none;
+input[type="file"]{
+   display: none;
 }
 
-.btn-add{
-  margin-left: 3rem;
+
+.label-upload{
+  color: #fff;
+  border-radius: 5%;
+  border: solid 2px #fff;
+  justify-content: center;
+  width: 20rem;
+  
+}
+
+.form-upload{
+  display: flex;
+  flex-direction:column;
+  gap: 1rem;
+  justify-content: center;
 }
