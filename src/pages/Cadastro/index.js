@@ -70,7 +70,7 @@ function index() {
                             <Form.Control type="text" required/>
                         </Form.Group>
                     </div>
-                    <fieldset class="">
+                    <fieldset class="" >
                         <div class="">
                             <h6 class="">Horário de curso:</h6>
                             <div class="" className='cont-tipo'>
@@ -96,7 +96,7 @@ function index() {
                         </div>
                     </fieldset>
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check label=" Li e concordo com os termos de uso" id="box-check" />
+                        <Form.Check label=" Li e concordo com os termos de uso" id="box-check" required />
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Cadastrar-se

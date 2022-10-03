@@ -14,7 +14,7 @@ import Erro from './pages/Erro';
 import Header from './components/Header/index.js';
 import Footer from './components/Footer/index.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//import ProtectedRouter from './protectedRouter';
+import ProtectedRouter from './protectedRouter';
 
 function App() {
 
