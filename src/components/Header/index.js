@@ -8,7 +8,7 @@ function index() {
   return (
     <>
       <Navbar bg="white" expand="lg" className='cont-nav'>
-      <Link to='/' className="HeaderLogo"><img className="HeaderLogo" src={Imagem} /></Link>
+        <Link to='/' className="HeaderLogo"><img className="HeaderLogo" src={Imagem} /></Link>
         <Container className='justify_tittle' >
           <Link to='/' className='HeaderLink'><h4 className='HeaderLink'>INTEC</h4></Link>
         </Container>
