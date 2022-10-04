@@ -13,8 +13,9 @@
   color: rgb(0, 0, 0);
   text-decoration: none;
   transition: 0.3s;
-  margin-right: auto;
-  margin-left: 48%;
+  margin: auto;
+  padding: auto;
+  margin-right: 15.3rem;
 }
 
 .Header-cad, .Header-log{
@@ -40,7 +41,7 @@
   position: relative;
   text-align:center;
   display: flex;
-  margin: auto;
+  transform: translate(-5%);
 }
 
  .HeaderLink :hover {
@@ -51,6 +52,7 @@
 a:hover {
    color: rgb(133, 133, 133) !important; 
 }
+
 
 
 

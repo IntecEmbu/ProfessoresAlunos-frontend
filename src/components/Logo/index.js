@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, } from 'react-bootstrap';
-import Imagem from '../Imagens/branco.png';
+import Imagem from '../Imagens/logo_loading.gif';
 import '../../StyleComponents/Logo.css';
 
 
@@ -11,7 +11,7 @@ function index() {
     <Card className='CardLogo'>
       <Card.Body>
         <img src={Imagem} className='LogoIntec' />
-        <Card.Title>INTEC</Card.Title>
+        <Card.Title className="TittleName">INTEC</Card.Title>
       </Card.Body>
     </Card>
 

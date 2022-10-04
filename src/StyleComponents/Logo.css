@@ -12,4 +12,23 @@
 
 .LogoIntec{
     width: 100%;
+    margin: auto;
+    padding: auto;
+}
+
+.TittleName {
+    padding-top: 60px;
+    margin-right: 52.5px;
+    font-size: 30px !important;
+    animation: go-back 3s infinite alternate !important;
+    color: gainsboro;
+}
+
+@keyframes go-back {
+    from {
+        transform: translateX(50px);
+    }
+    to {
+        transform: translateX(0);
+    }
 }

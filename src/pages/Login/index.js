@@ -6,7 +6,6 @@ import { useState } from 'react';
 import '../../styles/login.css';
 
 
-
 function Index() {
 
     const [userName, setUserName] = useState('');
