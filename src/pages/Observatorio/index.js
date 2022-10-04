@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Pesquisa from '../../components/Pesquisa/index.js';
 import Btn from '../../components/BotaoFlutuante';
 import ItemObs from '../../components/ItemObesrvatorio/index.js';
@@ -6,22 +6,34 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { items } from './items.js';
+import ModalAddDoc from '../../components/ModalAddDoc/index.js';
+
 import '../../styles/observatorio.css';
 
 
 
-function index() {
-  console.log(items)
+function Index() {
+
+  const [loadModalAdd, setModalAdd] = useState(false);
+
+  function showAddModal() {
+    setModalAdd(true);
+    console.log('sssss')
+  }
+
+
   return (
-    <>
+    <> 
+     {loadModalAdd && <ModalAddDoc isOpen={loadModalAdd}  />}
     <Btn/>
       <div className='contanier-obs'>
         <main className='main-obs' >
           <header className='header-obs'>
             <Pesquisa />
-            <Button variant="primary" className='btn-criar'>
+            <Button variant="primary" className='btn-criar' onClick={showAddModal} >
               Criar Documento
             </Button>
+
           </header>
           <body className='body-obs'>
             <Container fluid >
@@ -45,5 +57,5 @@ function index() {
   )
 }
 
-export default index
+export default Index
 

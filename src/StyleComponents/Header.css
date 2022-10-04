@@ -16,7 +16,6 @@
   transition: 0.3s;
   margin: auto;
   padding: auto;
-  margin-right: 15.3rem;
 }
 
 .Header-cad, .Header-log{
@@ -52,7 +51,6 @@
 a:hover {
    color: rgb(133, 133, 133) !important; 
 }
-
 
 
 
