@@ -19,11 +19,26 @@
 }
 
 
-.label-upload{
+.Modal-upload{
     color: #fff;
     border-radius: 5%;
     border: solid 2px #fff;
     justify-content: center;
+    text-align: center;
     width: 20rem;
     
-  }
+}
+
+.Modal-img{
+    width: 10rem;
+    margin: auto;
+    
+}
+
+
+.form-upload{
+    display: flex;
+    flex-direction:column;
+    gap: 1rem;
+    justify-content: center;
+}

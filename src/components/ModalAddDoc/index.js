@@ -98,17 +98,17 @@ function Index(isOpen) {
                                     {status.type === 'success' ? <alert style={{ color: "#fff" }}>{status.mensagem}</alert> : ""}
                                     {status.type === 'error' ? < alert style={{ color: "#ff0000" }}>{status.mensagem}</alert> : ""}
 
-                                    <form onSubmit={UploadImage} className='form-upload'>
-                                        <label for="inputTag" className="label-upload">
+                                    <form onSubmit={UploadImage} className='Modal-upload'>
+                                        <label for="inputTag" className="Modal-upload">
                                             <p>Clique aqui</p>
-                                            {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={Img} alt="Imagem" className='upload-img' />}
+                                            {image ? <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> : <img src={Img} alt="Imagem" className='Modal-img' />}
                                             <p>Para adicionar uma imagem</p>
                                             <input id="inputTag" type="file" onChange={e => setImage(e.target.files[0])} />
                                         </label>
                                     </form>
+                                    <label>Descrição:</label><br/>
+                                    <textarea></textarea>
                                 </div>
-                                <label>Descrição:</label>
-                                <textarea></textarea>
                             </div>
                             <Button
                                 type="submit"
