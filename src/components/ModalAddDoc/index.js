@@ -114,10 +114,12 @@ function Index(isOpen) {
                                     type="submit"
                                     name="action"
                                     className='btn-criar-modal'
+                                    
                                 >Criar doc</Button>
 
                                 <Button
                                     variant='danger'
+                                    onClick={() => { window.location.reload(true) }}
                                 >Cancelar</Button>
                             </div>
                         </form>
