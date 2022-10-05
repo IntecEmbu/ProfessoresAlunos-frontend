@@ -13,6 +13,7 @@ function Index() {
 
     const handleSubmit = useCallback((event) => {
         event.preventDefault();
+        console.log(userName, password)
     },
     [userName, password]
     );
