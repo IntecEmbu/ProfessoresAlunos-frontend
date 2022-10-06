@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Modal from 'react-modal';
+import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../StyleComponents/ModalAdd.css';
 import api from '../../config/configApi.js';
 import Img from '../../components/Imagens/branco.png';
 
-Modal.setAppElement('#root')
+// Modal.setAppElement('#root')
 
 function Index(isOpen) {
 
@@ -79,6 +79,7 @@ function Index(isOpen) {
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={handleCloseModal}
+                    data-backdrop ='static'
                     className="modal-add-Doc"
                 >
                     <h2>Criar Documento</h2>

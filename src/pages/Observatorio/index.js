@@ -24,7 +24,7 @@ function Index() {
 
   return (
     <> 
-     {loadModalAdd && <ModalAddDoc isOpen={loadModalAdd}  />}
+     {loadModalAdd && <ModalAddDoc data-backdrop ='static' isOpen={loadModalAdd}  />}
     <Btn/>
       <div className='contanier-obs'>
         <main className='main-obs' >

@@ -55,3 +55,11 @@ input[type="file"]{
   gap: 1rem;
   justify-content: center;
 }
+
+.img{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
