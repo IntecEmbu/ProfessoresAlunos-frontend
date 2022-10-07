@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
+import Modal from 'react-modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../StyleComponents/ModalAdd.css';
 import api from '../../config/configApi.js';
 import Img from '../../components/Imagens/branco.png';
 
-// Modal.setAppElement('#root')
+Modal.setAppElement('#root')
 
 function Index(isOpen) {
 
     const [modalIsOpen, setIsOpen] = useState(isOpen);
-
-
-    function handleCloseModal() {
-        setIsOpen(false)
-    }
-
 
     const [image, setImage] = useState('');
     const [status, setStatus] = useState({
@@ -78,7 +72,6 @@ function Index(isOpen) {
             <div>
                 <Modal
                     isOpen={modalIsOpen}
-                    onRequestClose={handleCloseModal}
                     data-backdrop ='static'
                     className="modal-add-Doc"
                 >
