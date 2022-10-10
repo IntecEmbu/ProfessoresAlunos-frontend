@@ -6,4 +6,9 @@
   justify-content: center;
 }
 
+.input-group .btn {
+  position: relative;
+  z-index: 0 !important; 
+}
+
 

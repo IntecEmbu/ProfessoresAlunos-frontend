@@ -1,16 +1,27 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Btn from '../../components/BotaoFlutuante';
 import Pesquisa from '../../components/Pesquisa/index.js';
+import ModalMaterialFeed from '../../components/ModalMaterialFeed/index.js';
 import '../../styles/feedback1.css';
 
 
 
-function index() {
+function Index() {
+
+    const [loadModalAdd, setModalAdd] = useState(false);
+
+    function showAddModal() {
+        setModalAdd(true);
+        console.log('sssss')
+    }
+
+
     return (
         <>
+            {loadModalAdd && <ModalMaterialFeed data-backdrop='static' isOpen={loadModalAdd} />}
+
             <Btn />
             <div className='pai'>
                 <h1 className='IntecFeed'>INTEC FEEDBACK</h1>
@@ -21,6 +32,7 @@ function index() {
                             <Link to='/Feedback3'>
                                 <Button>Ver Feedbacks</Button>
                             </Link>
+                            <Button onClick={showAddModal} >Adicionar Material</Button>
                         </div>
                     </header>
                     <body className='bodyForm1'>
@@ -39,5 +51,5 @@ function index() {
     )
 }
 
-export default index
+export default Index
 

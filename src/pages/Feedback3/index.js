@@ -35,7 +35,7 @@ function index() {
                                     <td>3 DSN</td>
                                     <td>2022</td>
                                     <td>
-                                        <Link to='/Feedback1'>
+                                        <Link to='/Feedback2'>
                                             <Button>Acessar</Button>
                                         </Link>
                                     </td>
