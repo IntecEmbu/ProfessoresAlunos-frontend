@@ -9,6 +9,7 @@ import Img from '../../components/Imagens/branco.png';
 Modal.setAppElement('#root')
 
 function Index(isOpen) {
+    
 
     const [modalIsOpen, setIsOpen] = useState(isOpen);
 
@@ -17,6 +18,8 @@ function Index(isOpen) {
         type: '',
         mensagem: ''
     });
+
+
     const UploadImage = async e => {
         e.preventDefault();
         const formData = new FormData();
