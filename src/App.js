@@ -13,6 +13,7 @@ import Feedback3 from './pages/Feedback3';
 import Erro from './pages/Erro';
 import Header from './components/Header/index.js';
 import Footer from './components/Footer/index.js';
+import ProtectedRouter from './protectedRouter.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -24,17 +25,19 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path='/' element={<Main/>}/>
-            <Route path='/Cadastro' element={<Cadastro/>}/>
-            <Route path='/Login' element={<Login/>}/>
-            <Route path='/Avaliacao' element={<Avaliacao/>}/>
-            <Route path='/Avaliacoes' element={<Avaliacao2/>}/>
-            <Route path='/Feedback1' element={<Feedback1/>}/>
-            <Route path='/Feedback2' element={<Feedback2/>}/>
-            <Route path='/Feedback3' element={<Feedback3/>}/>
-            <Route path='/Observatorio' element={<Observatorio/>}/>
-            <Route path='/Observatorio/Detalhes' element={<Observatorio2/>}/>
-            <Route path='*' element={<Erro/>}/>
+            <Route path='/' element={<Main />} />
+            <Route path='/Cadastro' element={<Cadastro />} />
+            <Route path='/Login' element={<Login />} />
+            <Route element={<ProtectedRouter />}>
+              <Route path='/Avaliacao' element={<Avaliacao />} />
+              <Route path='/Avaliacoes' element={<Avaliacao2 />} />
+              <Route path='/Feedback1' element={<Feedback1 />} />
+              <Route path='/Feedback2' element={<Feedback2 />} />
+              <Route path='/Feedback3' element={<Feedback3 />} />
+              <Route path='/Observatorio' element={<Observatorio />} />
+              <Route path='/Observatorio/Detalhes' element={<Observatorio2 />} />
+            </Route>
+            <Route path='*' element={<Erro />} />
           </Routes>
           <Footer />
         </BrowserRouter>
