@@ -1,16 +1,15 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 export function userAuth(){
-    const user = sessionStorage.getItem("login")
+    const user = sessionStorage.getItem("login");
     return user && user;
 }
 
 function protectedRouter(){
-    const isAuth = userAuth;
+    const isAuth = userAuth();
     return(
-        isAuth ? <Outlet/> : <Navigate to ='/Login'/>
-    );
+        isAuth ? <Outlet/> : <Navigate to = '/login' />
+    )
 }
-
 
 export default protectedRouter;
