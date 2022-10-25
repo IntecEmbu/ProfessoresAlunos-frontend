@@ -11,6 +11,7 @@ import api from '../../config/configApi.js'
 
 function Index() {
 
+ 
   const [image, setImage] = useState('');
   const [status, setStatus] = useState({
     type: '',
@@ -27,7 +28,7 @@ function Index() {
       }
     }
 
-    await api.post("/upload-image", formData, headers)
+    await api.post("/PostObs", formData, headers)
       .then((response) => {
         setStatus({
           type: 'success',
@@ -52,7 +53,7 @@ function Index() {
 
   const getImages = async () => {
 
-    await api.get("/list-image")
+    await api.get("ListObs")
       .then((response) => {
         console.log(response.data);
         setData(response.data.images);
@@ -65,6 +66,14 @@ function Index() {
   useEffect(() => {
     getImages();
   }, []);
+
+  // function refreshPage() {
+  //   if(status.type === 'success' ){
+  //   window.location.reload(false);
+  // }else {
+  //   alert( "This page is not reloaded");
+  // }}
+  
 
   return (
     <>
