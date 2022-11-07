@@ -52,6 +52,16 @@ a:hover {
    color: rgb(133, 133, 133) !important; 
 }
 
+.userLogado{
+  position: absolute;
+  z-index: 1;
+  background-color: rgb(252, 252, 252);
+  width: 14rem;
+  height: 2rem;
+  margin-left: 70rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
 
 
 

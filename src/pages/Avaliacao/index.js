@@ -44,11 +44,11 @@ const App = () => {
               <InputGroup.Text onChange={e => setAno(e.target.value)}>AVALIAÇÃO DO TRABALHO DE CONCLUSÃO DE CURSO – TCC - ANO:</InputGroup.Text>
               <Form.Control />
             </InputGroup>
-            <div>
-              <InputGroup className="mb-3" >
+            <InputGroup className="mb-3" >
                 <InputGroup.Text onChange={e => setNome(e.target.value)}>Aluno(a):</InputGroup.Text>
                 <Form.Control />
               </InputGroup>
+            <div className='aluno-mod-turm'>
               <InputGroup className="mb-3" >
                 <InputGroup.Text onChange={e => setModulo(e.target.value)}>Módulo:</InputGroup.Text>
                 <Form.Control />
@@ -81,7 +81,7 @@ const App = () => {
               serem certificadas no Histórico Escolar.
             </p>
             <InputGroup className="mb-3" >
-              <InputGroup.Text onChange={e => setRs(e.target.value)}>RS do Professor Responsável:</InputGroup.Text>
+              <InputGroup.Text onChange={e => setRs(e.target.value)}>RM do Professor Responsável:</InputGroup.Text>
               <Form.Control />
             </InputGroup>
             <InputGroup className="mb-3" >
@@ -95,7 +95,8 @@ const App = () => {
             
           </div>
         </div>
-        <Button className='btn-avaliacao' onClick={handlePrint}> <MdPictureAsPdf/> Enviar </Button>
+        <Button className='btn-avaliacao' onClick={handlePrint}> <MdPictureAsPdf/> Gerar PDF </Button>
+        <Button className='btn-avaliacao-env'> Enviar </Button>
       </div>
 
     </>

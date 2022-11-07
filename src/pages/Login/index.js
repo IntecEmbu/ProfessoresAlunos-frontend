@@ -29,7 +29,6 @@ function Index() {
       const { data } = await api.post("/login", dataLogin);
       console.log("Results >>> " + JSON.stringify(data))
 
-      alert(`Login efetuado com sucesso ${userName}`);
 
       // armazena os dados do usuário no navegador para não precisar logar novamente
       sessionStorage.setItem("login", true);

@@ -8,7 +8,10 @@
   padding: 2rem;
 
 }
-
+.aluno-mod-turm{
+  display: flex;
+  gap: 2rem;
+}
 
 .doc-pag {
   padding: 1rem;
@@ -51,3 +54,7 @@
   margin-top: 2%;
 }
 
+.btn-avaliacao-env{
+  margin-top: 2%;
+  margin-left: 2%;
+}
