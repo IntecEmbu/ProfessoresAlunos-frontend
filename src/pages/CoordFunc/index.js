@@ -13,7 +13,7 @@ function Index() {
             <div className='pai-coord'>
                 <h1 className='textFunc'>ESPAÇO DO COORDENADOR</h1>
                 <div className='Card-Group'>
-                    <Link to='/'>
+                    <Link to='/Addcurso'>
                         <div className='cont-btn-curso'>
                             <FaClipboardList size={'5em'} className='btn-logo' />
                             <p className='p-coord-curso'>Adicionar Curso</p>
