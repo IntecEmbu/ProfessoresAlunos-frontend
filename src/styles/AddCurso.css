@@ -30,10 +30,27 @@
     flex-direction: row;
     gap: 2rem;
     justify-content: center;
-    margin-bottom: 1rem;
     font-weight: bold;
 }
 
 .text-addCurso-periodo{
     margin-top: 2rem;
+}
+
+.cont-addCurso-form{
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.acronimo-cont{
+    width: 15rem;
+}
+
+.btn-addCurso-cont{
+    display: flex;
+    margin-top: 4rem;
+    gap: 1rem;
+    align-content: center;
+    justify-content: center;
 }
