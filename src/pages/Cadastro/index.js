@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Imagem from '../../components/Imagens/transparente.png';
 import api from '../../service/api';
+import {useNavigate } from "react-router-dom";
 import '../../styles/cadastro.css';
 
 
@@ -18,6 +19,8 @@ function Index(e) {
     const [allCourses, setAllCourses] = useState([]);
     const [selectedCourse, setSelectedCourse] = useState('')
     const [period, setPeriod] = useState('')
+
+    let navigate = useNavigate();
 
     async function findCourses(scheduleName) {
 
@@ -48,8 +51,7 @@ function Index(e) {
                 email, password, userName, regClass,
                 regNumber, birth, phone, selectedCourse, period
             })
-
-            alert(`Usuario cadastrado com sucesso`)
+            navigate("/login");
         }
         catch (err) {
             if (err.response.status === 400) {
@@ -204,6 +206,7 @@ function Index(e) {
                         {allCourses.map(course => {
                             return (
                                 <>
+                                    <option className='separa-curso'></option>
                                     <option
                                         key={course.id_course}
                                         value={course.id_course}

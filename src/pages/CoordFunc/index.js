@@ -19,7 +19,7 @@ function Index() {
                             <p className='p-coord-curso'>Adicionar Curso</p>
                         </div>
                     </Link>
-                    <Link to='/'>
+                    <Link to='/Permuser'>
                         <div className='cont-btn-curso'>
                             <FaUserLock size={'5em'} className='btn-logo' />
                             <p className='p-coord-curso'>Permitir usuário</p>

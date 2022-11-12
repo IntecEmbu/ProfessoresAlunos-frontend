@@ -1,5 +1,4 @@
-import './App.css';
-import { useState } from 'react';
+import './App.css'
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import Main from './pages/Main';
@@ -12,6 +11,7 @@ import Feedback2 from './pages/FeedBack2';
 import Feedback3 from './pages/Feedback3';
 import CoordFunc from './pages/CoordFunc';
 import AddCurso from './pages/AddCurso';
+import PermUser from './pages/PermUser';
 import Erro from './pages/Erro';
 import Header from './components/Header/index.js';
 import Footer from './components/Footer/index.js';
@@ -32,6 +32,7 @@ function App() {
             <Route path='/Login' element={<Login />} />
             <Route element={<ProtectedRouter />}>
               <Route path='/Addcurso' element={<AddCurso />} />
+              <Route path='/Permuser' element={< PermUser/>} />
               <Route path='/CoordFunc' element={<CoordFunc />} />
               <Route path='/Avaliacao' element={<Avaliacao />} />
               <Route path='/Avaliacoes' element={<Avaliacao2 />} />
