@@ -7,7 +7,7 @@ import Img from '../../components/Imagens/branco.png';
 import '../../styles/observatorio2.css';
 import '../../styles/main.css';
 import api from '../../config/configApi.js'
-
+import api2 from '../../config/configApi2.js'
 
 function Index() {
 
@@ -28,7 +28,7 @@ function Index() {
       }
     }
 
-    await api.post("/PostObs", formData, headers)
+    await api2.post("/PostObs", formData, headers)
       .then((response) => {
         setStatus({
           type: 'success',
@@ -53,7 +53,7 @@ function Index() {
 
   const getImages = async () => {
 
-    await api.get("ListObs")
+    await api2.get("ListObs")
       .then((response) => {
         console.log(response.data);
         setData(response.data.images);
