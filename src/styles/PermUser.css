@@ -77,7 +77,7 @@
     font-family: bold;
 }
 
-.justfy{
+.justfy-perm{
     display: flex;
     flex-direction: row;
 }
@@ -100,11 +100,24 @@
     text-align: left;
 }
 
-.btn-add-excluir{
+.btn-perm-excluir{
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-content: space-between;
+}
+
+.Perm-aut{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.btn-consultar{
+    padding: 2rem;
+    margin-top: 5rem;
 }

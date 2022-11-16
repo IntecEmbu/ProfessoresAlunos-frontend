@@ -16,7 +16,7 @@ function Index() {
             <div className='pai-Perm'>
                 <h1 className='text-Perm'>Permitir Usuário</h1>
                 <div className='Perm-container'>
-                    <div className='justfy'>
+                    <div className='justfy-perm'>
                         <fieldset class="">
                             <div className='perm-left'>
                                 <h6>Dados do usuário:</h6>
@@ -58,15 +58,54 @@ function Index() {
                                     type="text"
                                     required />
                             </div>
-                            <div className='btn-add-excluir'>
+                            <div className='btn-perm-excluir'>
                                 <Button variant='danger'>Excluir</Button>
                                 <Button>Adicionar</Button>
                             </div>
                         </div>
                     </div>
-                    <div className='btn-perm-cont'>
-                        <Button> Consultar </Button>
-                        <Button> Enviar </Button>
+                    <div className='justfy-perm'>
+                        <fieldset class="">
+                            <div className='perm-left'>
+                                <h6>Selecione a autorização:</h6>
+                                <Form.Label className='rm-gt-n'>Autorização que será atribuida ao usuário.</Form.Label>
+                                <div class="" className='Perm-aut'>
+                                    <div class="" >
+                                        <label class="" for="gridRadios2">
+                                            <input
+                                                type="radio"
+                                                name="auto"
+                                                value="Administrador"
+                                                required />
+                                            Administrador
+                                        </label>
+                                    </div>
+                                    <div class="">
+                                        <label class="" for="gridRadios2">
+                                            <input
+                                                type="radio"
+                                                name="auto"
+                                                value="Coordenador"
+                                                required />
+                                            Coordenador
+                                        </label>
+                                    </div>
+                                    <div class="">
+                                        <label class="" for="gridRadios2">
+                                            <input
+                                                type="radio"
+                                                name="auto"
+                                                value="Professor"
+                                                required />
+                                            Professor
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div className='btn-consultar'>
+                            <Button> Consultar autorizados</Button>
+                        </div>
                     </div>
                 </div>
             </div>
