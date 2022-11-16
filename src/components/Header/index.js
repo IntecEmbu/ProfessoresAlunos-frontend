@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Imagem from '../Imagens/transparente.png';
+import api from '../../service/api.js';
 import '../../StyleComponents/Header.css';
 
-function index() {
+function Index() {
+
+
+
+
   return (
     <>
       <Navbar bg="white" expand="lg" className='cont-nav'>
@@ -19,4 +24,4 @@ function index() {
   )
 }
 
-export default index
+export default Index

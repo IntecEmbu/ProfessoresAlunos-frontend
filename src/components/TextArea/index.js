@@ -1,17 +1,14 @@
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
+import '../../StyleComponents/textArea.css'
 
 function FormFloatingTextareaExample() {
   return (
     <>
-   
-      
-        
-     
       <FloatingLabel controlId="floatingTextarea2" >
         <Form.Control
           as="textarea"
-          style={{ height: '20rem' }}
+          style={{ height: '15rem' }}
         />
       </FloatingLabel>
     </>
