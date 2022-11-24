@@ -1,62 +1,42 @@
 export const items = [
     {
         src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
-        title: 'agua',
+        title: 'SemanaTécnicaDsn241122',
+        text: 'palestras'
+    },
+    {
+        src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
+        title: 'SemanaTécnicaTRT241022',
+        text: 'palestras'
+    },
+    {
+        src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
+        title: 'SemanaTécnicaADM240922',
+        text: 'feiras'
+    },
+    {
+        src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
+        title: 'Visita técnica240222',
+        text: 'IBM'
+    },
+    {
+        src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
+        title: 'SemanaTécnicaDs240222',
         text: 'superagua'
     },
     {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
+        src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
+        title: 'SemanaTécnicaDs240222',
         text: 'superagua'
     },
     {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'terra',
+        src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
+        title: 'SemanaTécnicaDs24112022',
         text: 'superagua'
     },
     {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'terra',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'terra',
-        text: 'superagua'
-    },
-    {
-        src: 'https://img.freepik.com/free-vector/photo-booth-props-wedding-speech-bubble-frames-doodle-love-heart-frame-mustache-glasses-prop_102902-2270.jpg',
-        title: 'agua',
+        src: 'https://images.alphacoders.com/116/thumbbig-1162249.webp',
+        title: 'SemanaTécnicaDs24112022',
         text: 'superagua'
     },
 ]
