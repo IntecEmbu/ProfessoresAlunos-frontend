@@ -65,10 +65,10 @@ function Index(isOpen) {
                 console.log(err.response);
             })
     }
-
     useEffect(() => {
         getImages();
     }, []);
+
 
     return (
         <>
@@ -107,12 +107,12 @@ function Index(isOpen) {
                                     <textarea className='textarea-modal'></textarea>
                                 </div>
 
-                                <Button
+                                <Button 
                                     type="submit"
                                     name="action"
                                     className='btn-criar-modal'
                                     
-                                >Criar doc</Button>
+                                >Criar doc</Button >
 
                                 <Button
                                     variant='danger'

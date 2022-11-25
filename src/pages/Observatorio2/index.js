@@ -6,7 +6,6 @@ import TextArea from '../../components/TextArea/index.js';
 import Img from '../../components/Imagens/branco.png';
 import '../../styles/observatorio2.css';
 import '../../styles/main.css';
-import api from '../../config/configApi.js'
 import api2 from '../../config/configApi2.js'
 
 function Index() {
