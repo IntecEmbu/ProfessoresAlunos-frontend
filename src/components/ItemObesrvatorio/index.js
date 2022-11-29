@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 import '../../StyleComponents/itemobs.css';
 
 
-function index({ src, title, text }) {
+function index({ title, titleSub, text }) {
   return (
 
     <div className='coll'>
-      <Card style={{ width: '18rem' }} >
-        <Card.Img variant="top" src={src} />
+      <Card style={{ width: '18rem', margin: '50px' }} >
+        {/* <Card.Img variant="top" src={src} /> */}
         <Card.Body >
           <Card.Title>{title}</Card.Title>
+          <Card.Title>{titleSub}</Card.Title>
           <Card.Text>{text}</Card.Text>
           <Link to='/Observatorio/Detalhes'><Button variant="primary" >Acessar</Button></Link>
         </Card.Body>
