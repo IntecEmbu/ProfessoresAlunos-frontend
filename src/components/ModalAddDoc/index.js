@@ -18,6 +18,10 @@ function Index(isOpen) {
     const [descricao, setDescricao] = useState("");
 
     async function CreateDoc() {
+        if(titulo, subtitulo, descricao == ""){
+            alert("insira as informações nos campos")
+            return
+        }
         try {
           const test = {
             "titulo": titulo,
@@ -27,8 +31,12 @@ function Index(isOpen) {
           console.log("Sucesso: ", test)
           await api.post("/obser", test);
           alert(`Documento ${titulo} criado com sucesso!`);
-        } catch (err) {
+        }catch (err) {
+            if (err.response.status === 401) {
+                alert('formulário vazio')
+            }else{    
           alert(`Houve um erro: ${err}`);
+            }
         }
     }
     
@@ -49,8 +57,9 @@ function Index(isOpen) {
                                         <Form.Label>Título</Form.Label>
                                         <Form.Control type="text" 
                                            placeholder="Digite aqui" 
-                                           required value={titulo} 
+                                           value={titulo} 
                                            onChange={e => setTitulo(e.target.value)}
+                                           required
                                            />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -58,8 +67,9 @@ function Index(isOpen) {
                                         <Form.Control 
                                            type="text"
                                            placeholder="Digite aqui" 
-                                           required value={subtitulo} 
+                                           value={subtitulo} 
                                            onChange={e => setSubtitulo(e.target.value)}
+                                           required
                                            />
                                     </Form.Group>
 
@@ -68,7 +78,8 @@ function Index(isOpen) {
                                        className='textarea-modal'
                                        type="text"
                                        value={descricao} 
-                                       onChange={e => setDescricao(e.target.value)}>
+                                       onChange={e => setDescricao(e.target.value)}
+                                       required>
                                     </textarea>
                                 </div>
 

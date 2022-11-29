@@ -38,10 +38,13 @@ function Index() {
       // para qual página o usuário será redirecionado
       navigate("/");
     } catch (err) {
+      if (err.response.status === 401) {
+        alert('formulário vazio')
+    }else{
       alert("erro na requisição" + err);
     }
   }
-
+  }
   return (
     <>
       <div className="login-cont">
