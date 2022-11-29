@@ -25,7 +25,7 @@ function Index() {
         "nome" : userName,
         "senha" : password,
       };
-
+      
       const { data } = await api.post("/login", dataLogin);
       console.log("Results >>> " + JSON.stringify(data))
 
@@ -34,6 +34,7 @@ function Index() {
       sessionStorage.setItem("login", true);
       // Criando a criptografia
       sessionStorage.setItem("jwt", data.token);
+      localStorage.setItem('_user_logado', JSON.stringify(dataLogin.nome)) //stringify transforma objeto em string
       // para qual página o usuário será redirecionado
       navigate("/");
     } catch (err) {

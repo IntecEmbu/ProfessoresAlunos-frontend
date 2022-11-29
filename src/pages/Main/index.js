@@ -11,9 +11,18 @@ import '../../styles/main.css';
 
 
 function index() {
+  try{
+  const usuarioLogadoString =  localStorage.getItem('_user_logado')
+    const usuarioLogado = JSON.parse(usuarioLogadoString)
+
+    console.log(usuarioLogado)
+    var user = usuarioLogado
+  }catch{
+  }
   return (
     <>
       <BtnCoord />
+      <h1>Bem vindo {user}</h1>
       <div className='linha'>
         <main>
           <Container fluid >
