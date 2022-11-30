@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../StyleComponents/ModalFeed.css';
-import api from '../../config/configApi.js';
+import api2 from '../../config/configApi.js';
 import Img from '../../components/Imagens/branco.png';
 
 Modal.setAppElement('#root')
@@ -30,7 +30,7 @@ function Index(isOpen) {
             }
         }
 
-        await api.post("/upload-image", formData, headers)
+        await api2.post("/PostMat", formData, headers)
             .then((response) => {
                 setStatus({
                     type: 'success',
@@ -55,7 +55,7 @@ function Index(isOpen) {
 
     const getImages = async () => {
 
-        await api.get("/list-image")
+        await api2.get("/ListMat")
             .then((response) => {
                 console.log(response.data);
                 setData(response.data.images);

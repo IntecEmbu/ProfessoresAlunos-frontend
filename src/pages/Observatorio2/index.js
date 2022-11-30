@@ -51,7 +51,7 @@ function Index() {
 
   const getImages = async () => {
 
-    await api2.get("ListObs")
+    await api2.get("/ListObs")
       .then((response) => {
         console.log(response.data);
         setData(response.data.images);
