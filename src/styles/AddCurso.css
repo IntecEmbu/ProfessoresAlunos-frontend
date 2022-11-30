@@ -43,14 +43,24 @@
     font-weight: bold;
 }
 
-.acronimo-cont{
-    width: 15rem;
-}
-
 .btn-addCurso-cont{
     display: flex;
-    margin-top: 4rem;
+    margin-top: 2rem;
     gap: 1rem;
     align-content: center;
     justify-content: center;
+}
+
+.name-acro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-name{
+    width: 25rem;
+}
+
+.periodo-taker{
+   display: none;
 }
