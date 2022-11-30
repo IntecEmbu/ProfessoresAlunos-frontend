@@ -4,6 +4,7 @@ import api from '../../service/api';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Btn from '../../components/BotaoFlutuante';
+import ModalConsulta from '../../components/ModalConsultarCurso';
 import '../../styles/AddCurso.css';
 
 
@@ -13,6 +14,12 @@ function Index() {
     const [nomedoCurso, setNomedoCurso] = useState('');
     const [acronimo, setAcronimo] = useState('');
     const [periodo, setPerido] = useState('');
+
+    const [loadModalAdd, setModalAdd] = useState(false);
+
+    function showAddModal() {
+        setModalAdd(true);
+    }
 
     async function createCourse(e) {
         e.preventDefault()
@@ -27,24 +34,12 @@ function Index() {
             alert(`Houve um erro: ${err}`)
         }
     }
-    async function consultar(e) {
-        e.preventDefault()
-        if(nomedoCurso == ""){
-            alert("insira o nome do curso")
-            return
-        }
-        try{
-            await api.get('/addCurso', {
-                nomedoCurso, periodo
-            })
-            alert('Curso encontrado')
-        }catch{}
-       
-        } 
-      
-    
+
+
+
     return (
         <>
+            {loadModalAdd && <ModalConsulta data-backdrop='static' isOpen={loadModalAdd} />}
             <Btn />
             <div className='pai-addCurso'>
                 <h1 className='text-addCurso'>ADICIONAR CURSO</h1>
@@ -119,7 +114,7 @@ function Index() {
                             required />
 
                         <div className='btn-addCurso-cont'>
-                            <Button onClick={consultar}> Consultar </Button>
+                            <Button variant='warning' onClick={showAddModal}> Consultar </Button>
                             <Button onClick={createCourse}> Enviar </Button>
                             <Button variant='danger'>Deletar</Button>
                         </div>
