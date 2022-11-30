@@ -34,7 +34,7 @@ function Index() {
       sessionStorage.setItem("login", true);
       // Criando a criptografia
       sessionStorage.setItem("jwt", data.token);
-      localStorage.setItem('_user_logado', JSON.stringify(dataLogin.nome)) //stringify transforma objeto em string
+      sessionStorage.setItem('_user_logado', JSON.stringify(dataLogin.nome)) //stringify transforma objeto em string
       // para qual página o usuário será redirecionado
       navigate("/");
     } catch (err) {

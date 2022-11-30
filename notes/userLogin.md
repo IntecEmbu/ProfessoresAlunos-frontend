@@ -4,14 +4,14 @@ função que retorna o nome do usuario logado
 
 caminho: ./src/pages/login/index.js
 
-Linha 37: "localStorage.setItem('_user_logado', JSON.stringify(dataLogin.nome))"
+Linha 37: "sessionStorage.setItem('_user_logado', JSON.stringify(dataLogin.nome))"
 esta pegando "nome" do array "dataLogin" e setando no localStorage('_user_logado')
 
 # coletar o nome do usuario para mensagem de boas vindas
 
 caminho: ./src/pages/Main/index.js
 
-    const usuarioLogadoString =  localStorage.getItem('_user_logado')
+    const usuarioLogadoString =  sessionStorage.getItem('_user_logado')
     const usuarioLogado = JSON.parse(usuarioLogadoString)
 
     console.log(usuarioLogado)

@@ -10,7 +10,6 @@ import api2 from '../../config/configApi2.js'
 
 function Index() {
 
- 
   const [image, setImage] = useState('');
   const [status, setStatus] = useState({
     type: '',

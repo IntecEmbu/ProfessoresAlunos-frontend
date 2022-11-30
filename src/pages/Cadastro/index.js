@@ -108,8 +108,9 @@ function Index(e) {
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Número de registro:</Form.Label>
                             <Form.Control
-                                type="number"
+                                type="text"
                                 value={regNumber}
+                                maxLength={5}
                                 onChange={e => setRegNumber(e.target.value)}
                                 required />
                         </Form.Group>

@@ -12,7 +12,7 @@ import '../../styles/main.css';
 
 function index() {
   try{
-  const usuarioLogadoString =  localStorage.getItem('_user_logado')
+  const usuarioLogadoString =  sessionStorage.getItem('_user_logado')
     const usuarioLogado = JSON.parse(usuarioLogadoString)
 
     console.log(usuarioLogado)
