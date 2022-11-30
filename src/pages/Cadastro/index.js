@@ -45,7 +45,20 @@ function Index(e) {
             alert('selecione seu curso')
             return
         }
-
+        if ( isNaN(regNumber)){
+            alert('insira um registro válido')
+            return
+        }
+        if (phone.length !== 11){
+            alert('numero inválido')
+            return
+        }
+        if (isNaN(phone)){
+            alert('numero inválido')
+            return
+        }
+        if (birth)
+        console.log(birth)
         try {
             await api.post('/user', {
                 email, password, userName, regClass,
@@ -73,6 +86,7 @@ function Index(e) {
                             <Form.Control
                                 type="text"
                                 value={userName}
+                                maxLength={50}
                                 onChange={e => setUserName(e.target.value)}
                                 required />
                         </Form.Group>
@@ -98,7 +112,7 @@ function Index(e) {
                                 <div class="">
                                     <input class="" type="radio" name="gridRadios" id="" value="GT" required></input>
                                     <label class="" for="gridRadios2">
-                                        Coordenador
+                                        Convidado Banca
                                     </label>
                                 </div>
                             </div>
@@ -120,6 +134,8 @@ function Index(e) {
                             <Form.Control
                                 type="date"
                                 value={birth}
+                                min="1950-01-01"
+                                max="2006-01-01"
                                 onChange={e => setBirth(e.target.value)}
                                 required />
                         </Form.Group>
