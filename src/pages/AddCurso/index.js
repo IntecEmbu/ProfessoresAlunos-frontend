@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import api from '../../service/api';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Btn from '../../components/BotaoFlutuante';
@@ -8,6 +9,25 @@ import '../../styles/AddCurso.css';
 
 
 function Index() {
+
+    const [nomedoCurso, setNomedoCurso] = useState('');
+    const [acronimo, setAcronimo] = useState('');
+    const [periodo, setPerido] = useState('');
+
+    async function createCourse(e) {
+        e.preventDefault()
+        try {
+            await api.post('/addCurso', {
+                nomedoCurso, acronimo, periodo
+            })
+            alert('Curso cadastrado com sucesso')
+        }
+        catch (err) {
+
+            alert(`Houve um erro: ${err}`)
+        }
+    }
+
 
 
     return (
@@ -25,7 +45,8 @@ function Index() {
                                         <input
                                             type="radio"
                                             name="Periodo"
-                                            value="Manhã"
+                                            value="1"
+                                            onChange={e => setPerido(e.target.value)}
                                             required />
                                         Manhã
                                     </label>
@@ -35,7 +56,8 @@ function Index() {
                                         <input
                                             type="radio"
                                             name="Periodo"
-                                            value="Tarde"
+                                            value="2"
+                                            onChange={e => setPerido(e.target.value)}
                                             required />
                                         Tarde
                                     </label>
@@ -45,7 +67,8 @@ function Index() {
                                         <input
                                             type="radio"
                                             name="Periodo"
-                                            value="Noite"
+                                            value="3"
+                                            onChange={e => setPerido(e.target.value)}
                                             required />
                                         Noite
                                     </label>
@@ -54,23 +77,38 @@ function Index() {
                         </div>
                     </fieldset>
                     <div className='cont-addCurso-form'>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Nome do Curso:</Form.Label>
-                            <Form.Control
-                                type="text"
-                                required />
-                        </Form.Group>
-                        <div className='acronimo-cont'>
+                        <div className='name-acro'>
+                            <div className='input-name'>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Label>Nome do Curso:</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        value={nomedoCurso}
+                                        onChange={e => setNomedoCurso(e.target.value)}
+                                        required />
+                                </Form.Group>
+                            </div>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Acrônimo:</Form.Label>
                                 <Form.Control
                                     type="text"
+                                    value={acronimo}
+                                    onChange={e => setAcronimo(e.target.value)}
                                     required />
                             </Form.Group>
                         </div>
+
+                        <input
+                            className='periodo-taker'
+                            type="text"
+                            value={periodo}
+                            onChange={e => setPerido(e.target.value)}
+                            required />
+
                         <div className='btn-addCurso-cont'>
-                            <Button> Consultar </Button>
-                            <Button> Enviar </Button>
+                            <Button variant='warning'> Consultar </Button>
+                            <Button onClick={createCourse}> Enviar </Button>
+                            <Button variant='danger'>Deletar</Button>
                         </div>
                     </div>
                 </div>
