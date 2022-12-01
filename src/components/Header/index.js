@@ -4,7 +4,7 @@ import { json, Link } from 'react-router-dom';
 import Imagem from '../Imagens/transparente.png';
 import api from '../../service/api.js';
 import '../../StyleComponents/Header.css';
-
+import Button from "react-bootstrap/Button";
 function Index() {
 
    
@@ -13,7 +13,11 @@ function Index() {
 
     // console.log(usuarioLogado)
     // const user = usuarioLogado
-    
+    async function logout() {
+      localStorage.clear();
+      sessionStorage.clear();
+      window.location.href = '/';
+  }
   return (
     <>
       <Navbar bg="white" expand="lg" className='cont-nav'>
@@ -21,6 +25,9 @@ function Index() {
         <Link to='/' className='HeaderLink'><h4 className='HeaderLink'>INTEC</h4></Link>
         <Nav.Link> <Link to='/Login' className='Header-cad'>Login</Link> </Nav.Link>
         <Nav.Link> <Link to='/Cadastro' className='Header-log'>Cadastrar</Link> </Nav.Link>
+        <Button variant="primary" type="submit" onClick={logout}>
+            sair
+          </Button>
       </Navbar>
       
 
