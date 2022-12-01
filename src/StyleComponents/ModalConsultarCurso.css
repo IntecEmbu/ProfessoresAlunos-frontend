@@ -1,7 +1,7 @@
 .modal-Consultar{
     background-color: #0b1d3f;
     width: 30vw;
-    height: 20rem;
+    height: 25rem;
     margin: auto;
     margin-top: 10rem;
     color: white;
@@ -22,5 +22,9 @@
 }
 
 .label-periodo{
+    margin-top: 2rem;
+}
+
+.btn-sair-consulta{
     margin-top: 2rem;
 }

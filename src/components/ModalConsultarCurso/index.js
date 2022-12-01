@@ -61,7 +61,7 @@ function Index(isOpen) {
                                                             id=""
                                                             value="Manhã"
                                                             onChange={event => findCourses(event.currentTarget.value)}
-                                                            />
+                                                        />
                                                         Manhã
                                                     </label>
                                                 </div>
@@ -74,7 +74,7 @@ function Index(isOpen) {
                                                             id=""
                                                             value="Tarde"
                                                             onChange={event => findCourses(event.currentTarget.value)}
-                                                            />
+                                                        />
                                                         Tarde
                                                     </label>
                                                 </div>
@@ -87,7 +87,7 @@ function Index(isOpen) {
                                                             id=""
                                                             value="Noite"
                                                             onChange={event => findCourses(event.currentTarget.value)}
-                                                            />
+                                                        />
                                                         Noite
                                                     </label>
                                                 </div>
@@ -118,6 +118,11 @@ function Index(isOpen) {
                             </div>
                         </form>
                     </div>
+                    <div className='btn-sair-consulta'></div>
+                    <Button
+                        variant='danger'
+                        onClick={() => { window.location.reload(true) }}
+                    >Sair</Button>
                 </Modal>
             </div>
         </>
