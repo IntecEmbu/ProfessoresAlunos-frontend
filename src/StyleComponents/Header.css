@@ -10,13 +10,13 @@
   z-index: 99;
 }
 
+.HeaderTittle {
+  margin: 1%;
+}
+
 .HeaderLink {
-  color: rgb(0, 0, 0);
+  color: black;
   text-decoration: none;
-  transition: 0.3s;
-  margin: auto;
-  padding: auto;
-  margin-left: 22.8rem;
 }
 
 .Header-cad, .Header-log{
@@ -68,5 +68,25 @@ h1{
   color: white;
 }
 
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between !important;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
 
+.logo-name{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 
+.cont-login-cadastro{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
