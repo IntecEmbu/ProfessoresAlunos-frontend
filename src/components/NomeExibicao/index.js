@@ -3,14 +3,14 @@ import { Card } from 'react-bootstrap';
 import '../../StyleComponents/nomeExibicao.css';
 
 function index() {
-
+  const user = sessionStorage.getItem('_user_logado')
   return (
     <>
-      {sessionStorage.getItem("_user_logado") !== null ?
+      {user !== null ?
         <div >
           <Card className='usuario-logado' >
             <Card.Body >
-              <Card.Title>{sessionStorage.getItem('_user_logado')}, seja bem-vindo (a)!</Card.Title>
+              <Card.Title>{user}, seja bem-vindo (a)!</Card.Title>
               {/* <Card.Title>RM: {numeroRM}</Card.Title>  */}
             </Card.Body>
           </Card>

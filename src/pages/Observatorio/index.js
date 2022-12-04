@@ -57,10 +57,10 @@ function Index() {
                 {obsers.map((obser) => {
                   return (
                     <ItemObs
-                        // src={obser.obs_name}
-                        title={obser.obs_name}
-                        titleSub={obser.obs_subject}
-                        text={obser.obs_desc}
+                      // src={obser.obs_name}
+                      title={obser.obs_name}
+                      titleSub={obser.obs_subject}
+                      text={obser.obs_desc}
                     />
                   );
                 })}
