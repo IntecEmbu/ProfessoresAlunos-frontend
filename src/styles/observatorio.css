@@ -10,6 +10,8 @@
 
 .body-obs{
     background-color: transparent;
+    display: flex;
+    flex-direction: row;
 }
 
 .header-obs{
@@ -21,4 +23,9 @@
     max-width: 100% ;
 }
 
+.row-cols-md-4>* {
+    flex: 0 0 auto;
+    width: 25rem !important; 
+    
+}
 

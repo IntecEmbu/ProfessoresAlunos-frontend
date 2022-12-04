@@ -3,7 +3,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Imagem from '../../components/Imagens/transparente.png';
 import api from '../../service/api';
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import InputMask from 'react-input-mask';
 import '../../styles/cadastro.css';
 
 
@@ -21,6 +22,9 @@ function Index(e) {
     const [period, setPeriod] = useState('')
 
     let navigate = useNavigate();
+
+
+
 
     async function findCourses(scheduleName) {
 
@@ -45,20 +49,20 @@ function Index(e) {
             alert('selecione seu curso')
             return
         }
-        if ( isNaN(regNumber)){
+        if (isNaN(regNumber)) {
             alert('insira um registro válido')
             return
         }
-        if (phone.length !== 11){
+        if (phone.length !== 11) {
             alert('numero inválido')
             return
         }
-        if (isNaN(phone)){
+        if (isNaN(phone)) {
             alert('numero inválido')
             return
         }
         if (birth)
-        console.log(birth)
+            console.log(birth)
         try {
             await api.post('/user', {
                 email, password, userName, regClass,
@@ -162,6 +166,9 @@ function Index(e) {
                             <Form.Label>Telefone:</Form.Label>
                             <Form.Control
                                 type="text"
+                                // as={InputMask}
+                                // mask="(99)99999-9999"
+                                maxLength={11}
                                 value={phone}
                                 onChange={e => setPhone(e.target.value)}
                                 required />

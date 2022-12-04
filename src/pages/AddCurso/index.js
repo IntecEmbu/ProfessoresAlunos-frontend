@@ -100,6 +100,7 @@ function Index() {
                                 <Form.Label>Acrônimo:</Form.Label>
                                 <Form.Control
                                     type="text"
+                                    maxLength={3}
                                     value={acronimo}
                                     onChange={e => setAcronimo(e.target.value)}
                                     required />
@@ -116,7 +117,6 @@ function Index() {
                         <div className='btn-addCurso-cont'>
                             <Button variant='warning' onClick={showAddModal}> Consultar </Button>
                             <Button onClick={createCourse}> Enviar </Button>
-                            <Button variant='danger'>Deletar</Button>
                         </div>
                     </div>
                 </div>

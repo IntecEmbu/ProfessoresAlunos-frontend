@@ -44,7 +44,7 @@ function Index() {
     <Btn/>
       <div className='contanier-obs'>
         <main className='main-obs' >
-          <header className='header-obs'>
+        <header className='header-obs'>
             <Pesquisa />
             <Button variant="primary" className='btn-criar' onClick={showAddModal} >
               Criar Documento
