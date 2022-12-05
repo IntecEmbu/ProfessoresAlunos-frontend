@@ -27,10 +27,10 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path='/' element={<Main />} />
             <Route path='/Cadastro' element={<Cadastro />} />
             <Route path='/Login' element={<Login />} />
             <Route element={<ProtectedRouter />}>
+              <Route path='/' element={<Main />} />
               <Route path='/Addcurso' element={<AddCurso />} />
               <Route path='/Permuser' element={< PermUser/>} />
               <Route path='/CoordFunc' element={<CoordFunc />} />
