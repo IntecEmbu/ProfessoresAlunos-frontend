@@ -9,14 +9,21 @@ import Img from '../../components/Imagens/branco.png';
 Modal.setAppElement('#root')
 
 function Index(isOpen) {
+
+    const criador_string = sessionStorage.getItem("_user_logado")
+    const criadorCordenador = JSON.parse(criador_string)
     
+    var nomeCriador = criadorCordenador;
+
+    console.log(nomeCriador)
 
     const [modalIsOpen, setIsOpen] = useState(isOpen);
 
     const [titulo, setTitulo] = useState("");
     const [subtitulo, setSubtitulo] = useState("");
     const [descricao, setDescricao] = useState("");
-
+    const [criador, setcriador] = nomeCriador
+    
     async function CreateDoc() {
         if(titulo, subtitulo, descricao == ""){
             alert("insira as informações nos campos")
@@ -27,6 +34,7 @@ function Index(isOpen) {
             "titulo": titulo,
             "subtitulo": subtitulo,
             "descricao": descricao,
+            "criador": criador,
           };
           console.log("Sucesso: ", test)
           await api.post("/obser", test);

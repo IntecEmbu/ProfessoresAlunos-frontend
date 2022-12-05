@@ -15,7 +15,7 @@ function Index() {
   async function logout() {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = '/';
+    window.location.href = '/Login';
   }
 
   return (
