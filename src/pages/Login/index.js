@@ -42,7 +42,7 @@ function Index() {
       navigate("/");
     } catch (err) {
       if (err.response.status === 401) {
-        alert('formulário vazio')
+        alert('Algo esta incorreto no seu login')
       } else {
         alert("erro na requisição" + err);
       }
