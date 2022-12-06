@@ -22,8 +22,9 @@ function Index(isOpen) {
     const [titulo, setTitulo] = useState("");
     const [subtitulo, setSubtitulo] = useState("");
     const [descricao, setDescricao] = useState("");
-    const [criador, setcriador] = nomeCriador
     
+    const criador = nomeCriador
+
     async function CreateDoc() {
         if(titulo, subtitulo, descricao == ""){
             alert("insira as informações nos campos")
@@ -38,7 +39,7 @@ function Index(isOpen) {
           };
           console.log("Sucesso: ", test)
           await api.post("/obser", test);
-          alert(`Documento ${titulo} criado com sucesso!`);
+          alert(`Documento ${titulo} criado com sucesso! ${criador}`);
         }catch (err) {
             if (err.response.status === 401) {
                 alert('formulário vazio')
