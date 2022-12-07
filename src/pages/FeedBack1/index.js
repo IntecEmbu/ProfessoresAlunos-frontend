@@ -91,8 +91,9 @@ function Index() {
                         <div className='cont-pesquisa'>
                             <Pesquisa className='pesquisa-avaliacao' />
                             <Link to='/Feedback3'>
+                            {/* {sessionStorage.getItem("registro_numero") !== null ? :''}*/}
                                 <Button>Ver Feedbacks</Button>
-                            </Link>
+                            </Link> 
                             <Button onClick={showAddModal} >Adicionar Material</Button>
                         </div>
                     </header>

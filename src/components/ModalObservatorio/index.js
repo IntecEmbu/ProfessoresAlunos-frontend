@@ -52,7 +52,7 @@ function Index({ isOpen, onRequestClose, title }) {
 
   const getImages = async () => {
 
-    await api2.get("/ListObs", )
+    await api2.get(`/ListObs/${title}`)
       .then((response) => {
         console.log(response.data);
         setData(response.data.images);
@@ -72,7 +72,7 @@ function Index({ isOpen, onRequestClose, title }) {
   // }else {
   //   alert( "This page is not reloaded");
   // }}
-  
+
 
   return (
     <Modal
@@ -85,7 +85,7 @@ function Index({ isOpen, onRequestClose, title }) {
       </Modal.Header>
       <Modal.Body>
         <label for="inputTag">
-          { image ?
+          {image ?
             <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> :
             <img src={Img} alt="Imagem" className='upload-img' />
           }
@@ -101,6 +101,16 @@ function Index({ isOpen, onRequestClose, title }) {
           Confirmar envio
         </Button>
       </Modal.Footer>
+      <div className="img">
+
+        {data.map(image => (
+          <div key={image.id}>
+            <img src={url + image.image} alt={image.id} width="150" />
+            <hr />
+          </div>
+        ))}
+
+      </div>
     </Modal>
   );
 
