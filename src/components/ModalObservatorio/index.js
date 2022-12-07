@@ -7,9 +7,9 @@ import TextArea from '../../components/TextArea/index.js';
 import Img from '../../components/Imagens/branco.png';
 import '../../styles/observatorio2.css';
 import '../../styles/main.css';
-import api from '../../config/configApi.js'
+import api2 from '../../config/configApi2.js'
 
-function Index({ isOpen, onRequestClose }) {
+function Index({ isOpen, onRequestClose, title }) {
   const [image, setImage] = useState('');
   const [status, setStatus] = useState({
     type: '',
@@ -26,8 +26,9 @@ function Index({ isOpen, onRequestClose }) {
       }
     }
 
-    await api.post("/obser/image", formData, headers)
+    await api2.post(`/PostObs/${title}`, formData, headers)
       .then((response) => {
+        console.log(title)
         setStatus({
           type: 'success',
           mensagem: response.data.mensagem
@@ -36,7 +37,7 @@ function Index({ isOpen, onRequestClose }) {
         if (err.response) {
           setStatus({
             type: 'error',
-            mensagem: err.response.data.mensagem
+            mensagem: err
           });
         } else {
           setStatus({
@@ -51,7 +52,7 @@ function Index({ isOpen, onRequestClose }) {
 
   const getImages = async () => {
 
-    await api.get("/ListObs", )
+    await api2.get("/ListObs", )
       .then((response) => {
         console.log(response.data);
         setData(response.data.images);

@@ -38,19 +38,21 @@ function Index() {
 
 
   return (
-    <> 
-     {loadModalAdd && <ModalAddDoc data-backdrop ='static' isOpen={loadModalAdd}  />}
-     
-    <Btn/>
-      <div className='contanier-obs'>
-        <main className='main-obs' >
-        <header className='header-obs'>
-            <Pesquisa />
-            <Button variant="primary" className='btn-criar' onClick={showAddModal} >
-              Criar Documento
-            </Button>
+    <>
+      {loadModalAdd && <ModalAddDoc data-backdrop='static' isOpen={loadModalAdd} />}
 
+      <Btn />
+      <div className='contanier-obs'>
+        <h1 className='IntecObs'>INTEC OBSERVATÓRIO</h1>
+        <div className='divHeader'>
+          <header className='header-obs'>
+            <Pesquisa />       
+              <Button variant="primary" className='btn-criar' onClick={showAddModal} >
+                Criar Documento
+              </Button>
           </header>
+        </div>
+        <main className='main-obs' >
           <body className='body-obs'>
             <Container fluid >
               <Row xs={1} md={4} >
@@ -69,7 +71,7 @@ function Index() {
           </body>
         </main>
       </div>
-      
+
     </>
   )
 }

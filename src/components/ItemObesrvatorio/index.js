@@ -30,6 +30,7 @@ function Index({ title, titleSub, text }) {
       <ModalObservatorio
         isOpen={modalIsOpen}
         onRequestClose={() => setmodalIsOpen(false)}
+        title = {title}
       />
     </>
   )

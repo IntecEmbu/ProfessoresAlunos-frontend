@@ -39,10 +39,10 @@ function Index() {
       sessionStorage.setItem("jwt", data.token);
       sessionStorage.setItem('_user_logado', JSON.stringify(dataLogin.user_name)) //stringify transforma objeto em string
       // para qual página o usuário será redirecionado
-      navigate("/");
+      window.location.href = '/'
     } catch (err) {
       if (err.response.status === 401) {
-        alert('formulário vazio')
+        alert('Algo esta incorreto no seu login')
       } else {
         alert("erro na requisição" + err);
       }

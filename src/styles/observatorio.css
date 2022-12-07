@@ -1,10 +1,9 @@
 .contanier-obs{
-    display: flex;
     margin: 2rem 2rem 2rem 2rem;
     margin-top: 2rem;
     padding: 2rem;
     border: solid 2px #fff;
-    width: fit-content;
+    width: 80rem;
     height: fit-content;
 }
 
@@ -16,16 +15,27 @@
 
 .header-obs{
     display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    max-width: 100% ;
+    flex-direction:column;
+    margin-top: -3rem;
+    max-width: 50rem ;
 }
+
+
 
 .row-cols-md-4>* {
     flex: 0 0 auto;
     width: 25rem !important; 
     
+}
+
+.IntecObs{
+    color: #fff;
+    text-decoration: underline 10%;
+}
+
+.divHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 

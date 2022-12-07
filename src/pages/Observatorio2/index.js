@@ -26,7 +26,7 @@ function Index() {
       }
     }
 
-    await api2.post("/PostObs", formData, headers)
+    await api2.post("/PostObs/teste", formData, headers)
       .then((response) => {
         setStatus({
           type: 'success',
