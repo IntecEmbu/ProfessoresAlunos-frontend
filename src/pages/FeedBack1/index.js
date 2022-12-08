@@ -97,21 +97,20 @@ function Index() {
       {loadModalAdd && <ModalMaterialFeed data-backdrop='static' isOpen={loadModalAdd} />}
 
       <Btn />
-      <div className='pai'>
+      <div className='pai-feedback'>
         <h1 className='IntecFeed'>INTEC FEEDBACK</h1>
-        <div className='containerFeed'>
-          <header className='Form-header'>
-            <div className='cont-pesquisa'>
-              <Pesquisa className='pesquisa-avaliacao' />
-              <Link to='/Feedback3'>
-                {/* {sessionStorage.getItem("registro_numero") !== null ? :''}*/}
-                <Button>Ver Feedbacks</Button>
-              </Link>
-              <Button onClick={showAddModal} >Adicionar Material</Button>
-            </div>
-          </header>
-          <body className='bodyForm1'>
-            {/* <div className='divTurmas'>
+        <header className='Form-header'>
+          <div className='cont-pesquisa'>
+            <Pesquisa className='pesquisa-avaliacao' />
+            <Link to='/Feedback3'>
+              {/* {sessionStorage.getItem("registro_numero") !== null ? :''}*/}
+              <Button>Ver Feedbacks</Button>
+            </Link>
+            <Button onClick={showAddModal} >Adicionar Material</Button>
+          </div>
+        </header>
+        <body className='bodyForm1'>
+          {/* <div className='divTurmas'>
                              <p className='texto-divturma'>Professor</p>
                             <p className='texto-divturma'>PW III</p>
                             <p className='texto-divturma'>Matéria: Node.js</p>
@@ -119,46 +118,43 @@ function Index() {
                                 <Button className='btnAvancar'>Avançar</Button>
                             </Link>
                         </div> */}
-            <Table striped bordered hover >
-              <thead>
-                <tr>
-                  <th>id</th>
-                  <th>Material</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody >
-                {
-                  gender.map((gende) => (
-                    <tr key={gende.id_genero}>
-                      <td>{gende.id_genero}</td>
-                      <td>{gende.genero}</td>
-                      <td>
-                        <Link to="/Feedback3">
-                          <Button>Acessar</Button>
-                        </Link>
-                      </td>
+          <Table striped bordered hover >
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>Material</th>
+              </tr>
+            </thead>
+            <tbody >
+              {
+                gender.map((gende) => (
+                  <tr key={gende.id_genero}>
+                    <td>{gende.id_genero}</td>
+                    <td>{gende.genero}</td>
+                    <td>
+                      <Link to="/Feedback2">
+                        <Button>Acessar</Button>
+                      </Link>
+                    </td>
 
-                      {/* Botao de excluir */}
-                      <td>
-                        <Button
-                          variant="danger"
-                          onClick={baixar}
-                        >Baixar pdf
-                        </Button>
-                      </td>
-                    </tr>
-                  ))
-                }
-              </tbody>
-            </Table>
-          </body>
-          <div id="baixar">
+                    {/* Botao de excluir */}
+                    <td>
+                      <Button
+                        variant="danger"
+                        onClick={baixar}
+                      >Baixar pdf
+                      </Button>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </Table>
+        </body>
+        <div id="baixar">
 
-          </div>
-          <div className="img">
-
-          </div>
+        </div>
+        <div className="img">
         </div>
       </div>
     </>

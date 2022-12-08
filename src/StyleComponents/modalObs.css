@@ -1,0 +1,13 @@
+.modalobs{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.body{
+    background-color: #0b1d3f;
+    width: 100%;
+    height: fit-content;
+}

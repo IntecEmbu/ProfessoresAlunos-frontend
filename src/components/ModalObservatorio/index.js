@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
-import Container from 'react-bootstrap/Container';
-import Btn from '../../components/BotaoFlutuante';
-import TextArea from '../../components/TextArea/index.js';
 import Img from '../../components/Imagens/branco.png';
-import '../../styles/observatorio2.css';
-import '../../styles/main.css';
+import '../../StyleComponents/modalObs.css';
 import api2 from '../../config/configApi2.js'
 
 function Index({ isOpen, onRequestClose, title }) {
@@ -79,37 +75,40 @@ function Index({ isOpen, onRequestClose, title }) {
       show={isOpen}
       onHide={onRequestClose}
       backdrop="static"
+      className="modalobs"
     >
-      <Modal.Header closeButton>
-        <Modal.Title>Altere as informações</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <label for="inputTag">
-          {image ?
-            <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> :
-            <img src={Img} alt="Imagem" className='upload-img' />
-          }
-          <p>Clique para adicionar uma imagem</p>
-          <input id="inputTag" type="file" onChange={e => setImage(e.target.files[0])} />
-        </label>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onRequestClose}>
-          Fechar
-        </Button>
-        <Button variant="primary" onClick={UploadImage}>
-          Confirmar envio
-        </Button>
-      </Modal.Footer>
-      <div className="img">
+      <div className="body">
+        <Modal.Header closeButton>
+          <Modal.Title>Observatório</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <label for="inputTag">
+            {image ?
+              <img src={URL.createObjectURL(image)} alt="Imagem" width="150" height="150" /> :
+              <img src={Img} alt="Imagem" className='upload-img' />
+            }
+            <p>Clique para adicionar uma imagem</p>
+            <input id="inputTag" type="file" onChange={e => setImage(e.target.files[0])} />
+          </label>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={onRequestClose}>
+            Fechar
+          </Button>
+          <Button variant="primary" onClick={UploadImage}>
+            Confirmar envio
+          </Button>
+        </Modal.Footer>
+        <div className="img">
 
-        {data.map(image => (
-          <div key={image.id}>
-            <img src={url + image.image} alt={image.id} width="150" />
-            <hr />
-          </div>
-        ))}
+          {data.map(image => (
+            <div key={image.id}>
+              <img src={url + image.image} alt={image.id} width="150" />
+              <hr />
+            </div>
+          ))}
 
+        </div>
       </div>
     </Modal>
   );

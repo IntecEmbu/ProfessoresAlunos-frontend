@@ -3,13 +3,15 @@ import Modal from 'react-modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../StyleComponents/ModalFeed.css';
-import api2 from '../../config/configApi.js';
+import api2 from '../../config/configApi2.js';
+import api from '../../config/configApi.js'
 import Img from '../../components/Imagens/branco.png';
 
 Modal.setAppElement('#root')
 
-function Index(isOpen) {
+function Index(isOpen, e) {
 
+    const [gender, setGender] = useState('')
     //modal
     const [modalIsOpen, setIsOpen] = useState(isOpen);
 
@@ -65,6 +67,19 @@ function Index(isOpen) {
             })
     }
 
+    async function creatFeeback() {
+        try {
+            await api.post('/material', {
+                gender
+            })
+            alert('Feedback criado com sucesso')
+            console.log(gender)
+        }
+        catch (err) {
+            alert(`Houve um erro: ${err}`)
+        }
+    }
+
     useEffect(() => {
         getImages();
     }, []);
@@ -75,7 +90,7 @@ function Index(isOpen) {
             <div>
                 <Modal
                     isOpen={modalIsOpen}
-                    data-backdrop ='static'
+                    data-backdrop='static'
                     className="modal-Feed"
                 >
                     <h2>Adicionar Material</h2>
@@ -83,13 +98,12 @@ function Index(isOpen) {
                         <form className="col s12">
                             <div>
                                 <div className="cont-modal-Feed">
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Label>Professor</Form.Label>
-                                        <Form.Control type="text" />
-                                    </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Matéria</Form.Label>
-                                        <Form.Control />
+                                        <Form.Control
+                                            value={gender}
+                                            onChange={e => setGender(e.target.value)}
+                                        />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Assunto</Form.Label>
@@ -110,17 +124,15 @@ function Index(isOpen) {
                                 </div>
                                 <div className='cont-btn-Feed'>
 
-                                <Button
-                                    type="submit"
-                                    name="action"
-                                    className='btn-add-material'
-                                    
-                                >Adicionar</Button>
+                                    <Button
+                                        onClick={creatFeeback}
+                                        className='btn-add-material'
+                                    >Adicionar</Button>
 
-                                <Button
-                                    variant='danger'
-                                    onClick={() => { window.location.reload(true) }}
-                                >Cancelar</Button>
+                                    <Button
+                                        variant='danger'
+                                        onClick={() => { window.location.reload(true) }}
+                                    >Cancelar</Button>
                                 </div>
                             </div>
                         </form>
