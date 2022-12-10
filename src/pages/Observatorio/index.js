@@ -8,7 +8,10 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { items } from './items.js';
 import ModalAddDoc from '../../components/ModalAddDoc/index.js';
+import jwt_decode from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 import api from '../../service/api';
+
 
 import '../../styles/observatorio.css';
 
@@ -20,9 +23,24 @@ function Index() {
 
   const [loadModalAdd, setModalAdd] = useState(false);
 
+  const usuarioLogadoString = sessionStorage.getItem('jwt')
+  const usuarioLogado = jwt_decode(usuarioLogadoString)
+  var user = usuarioLogado.infoUser.id_login
+
+  let navigate = useNavigate();
+
   function showAddModal() {
     setModalAdd(true);
   }
+
+  useEffect(() => {
+    if (user.registration_class === 'RM' || 'GT') {
+      navigate('/Avaliacoes')
+    }
+    else {
+      navigate('/')
+    }
+  }, [])
 
 
   useEffect(() => {
@@ -46,10 +64,10 @@ function Index() {
         <h1 className='IntecObs'>INTEC OBSERVATÓRIO</h1>
         <div className='divHeader'>
           <header className='header-obs'>
-            <Pesquisa />       
-              <Button variant="primary" className='btn-criar' onClick={showAddModal} >
-                Criar Documento
-              </Button>
+            <Pesquisa />
+            <Button variant="primary" className='btn-criar' onClick={showAddModal} >
+              Criar Documento
+            </Button>
           </header>
         </div>
         <main className='main-obs' >

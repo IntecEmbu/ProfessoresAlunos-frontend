@@ -1,17 +1,33 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Btn from '../../components/BotaoFlutuante';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Pesquisa from '../../components/Pesquisa/index.js';
 import Table from 'react-bootstrap/Table';
+import jwt_decode from 'jwt-decode'
 import '../../styles/feedback1.css';
 import '../../styles/avaliacao2.css';
 
 
-function index() {
+function Index() {
+    const usuarioLogadoString = sessionStorage.getItem('jwt')
+    const usuarioLogado = jwt_decode(usuarioLogadoString)
+    var user = usuarioLogado.infoUser.id_login
+
+    let navigate = useNavigate();
+
+    useEffect(()=>{
+        if(user.registration_class === 'RM' || 'GT'){
+            navigate('/Avaliacoes')
+        }
+        else{
+            navigate('/')
+        }
+    },[])
+
     return (
         <>
-            <Btn/>
+            <Btn />
             <div className='pai'>
                 <h1 className='IntecFeed'>INTEC AVALIAÇÕES</h1>
                 <div className='containerFeed'>
@@ -55,4 +71,4 @@ function index() {
     )
 }
 
-export default index
+export default Index

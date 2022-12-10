@@ -73,6 +73,7 @@ function Index(isOpen, e) {
             await api.post('/material', {
                 material, assunto
             })
+            window.location.reload(true)
             alert('Feedback criado com sucesso')
             console.log(material)
         }

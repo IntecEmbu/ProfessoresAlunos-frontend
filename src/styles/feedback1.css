@@ -3,7 +3,7 @@
     text-decoration: underline 10%;
 }
 
-.pai{
+.pai-feedback{
     display: flex;
     flex-direction: column;
     margin: 2rem;

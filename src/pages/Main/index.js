@@ -6,20 +6,18 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import BtnCoord from '../../components/BotaoCoord/index.js';
 import NamePrincipal from '../../components/NomeExibicao/index.js';
+import jwt_decode from 'jwt-decode'
 import '../../styles/main.css';
 
 
 
 
 function index() {
-  try {
-    const usuarioLogadoString = sessionStorage.getItem('_user_logado')
-    const usuarioLogado = JSON.parse(usuarioLogadoString)
+    const usuarioLogadoString = sessionStorage.getItem('jwt')
+    const usuarioLogado = jwt_decode(usuarioLogadoString)
+    var user = usuarioLogado.infoUser.id_login
 
-    console.log(usuarioLogado)
-    var user = usuarioLogado
-  } catch {
-  }
+    console.log(user)
   return (
     <>
       <BtnCoord />
