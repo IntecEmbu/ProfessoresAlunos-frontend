@@ -35,7 +35,7 @@ function Index() {
 
   useEffect(() => {
     if (user.registration_class === 'RM' || 'GT') {
-      navigate('/Avaliacoes')
+      navigate('/Observatorio')
     }
     else {
       navigate('/')

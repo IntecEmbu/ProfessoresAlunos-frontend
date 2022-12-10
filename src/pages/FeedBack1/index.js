@@ -7,6 +7,7 @@ import ModalMaterialFeed from '../../components/ModalMaterialFeed/index.js';
 import Table from 'react-bootstrap/Table';
 import '../../styles/feedback1.css';
 import api2 from '../../config/configApi2.js'
+import jwt_decode from 'jwt-decode';
 import axios from "axios";
 
 
@@ -14,6 +15,11 @@ function Index() {
 
   const [material, setMaterial] = useState([]);
   const [assunto, setAssunto] = useState([]);
+
+  const usuarioLogadoString = sessionStorage.getItem('jwt')
+  const usuarioLogado = jwt_decode(usuarioLogadoString)
+  var user = usuarioLogado.infoUser.id_login
+
 
   const baixar = async e => {
     let d = document.createElement("iframe");
@@ -104,11 +110,15 @@ function Index() {
         <header className='Form-header'>
           <div className='cont-pesquisa'>
             <Pesquisa className='pesquisa-avaliacao' />
-            <Link to='/Feedback3'>
-              {/* {sessionStorage.getItem("registro_numero") !== null ? :''}*/}
-              <Button>Ver Feedbacks</Button>
-            </Link>
-            <Button onClick={showAddModal} >Adicionar Material</Button>
+            {user.registration_class === 'RM' && (
+              <>
+                <Link to='/Feedback3'>
+                  <Button>Ver Feedbacks</Button>
+                </Link>
+
+                <Button onClick={showAddModal} >Adicionar Material</Button>
+              </>
+            )}
           </div>
         </header>
         <body className='bodyForm1'>

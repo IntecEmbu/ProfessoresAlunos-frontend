@@ -1,0 +1,19 @@
+.color{
+    background-color: #0b1d3f;
+    color: white ;
+    text-align: center;
+}
+
+.modal-header .btn-close {
+    padding: 0.5rem 0.5rem;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+}
+.btn-close:hover {
+    color: white !important;
+    text-decoration: none;
+    opacity: .75;
+}
+
+.btn-close {
+    color: white !important;
+}

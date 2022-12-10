@@ -26,7 +26,7 @@ function Index() {
           </Card>
         )}
 
-        {user.registration_class === 'GT' && (
+        {user.registration_class === 'GT' &&(
           <Card className='ItemCard1'>
             <Link to='/avaliacoes' className='CardLink'>
               <Card.Body className='body'>
@@ -38,6 +38,7 @@ function Index() {
         )}
 
 
+      {user.registration_class != 'GT' &&(
         <Card className='ItemCard1'>
           <Link to='/Feedback1' className='CardLink'>
             <Card.Body className='body'>
@@ -46,6 +47,7 @@ function Index() {
             </Card.Body>
           </Link>
         </Card>
+        )}
 
         {user.registration_class === 'RM' && (
           <Card className='ItemCard1'>
