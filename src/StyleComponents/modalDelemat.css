@@ -1,0 +1,12 @@
+.color-dele{
+    background-color: #0b1d3f;
+    color: white ;
+    text-align: center;
+}
+
+.btn-modal-dele{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}

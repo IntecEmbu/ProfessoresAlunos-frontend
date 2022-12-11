@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import Modal from 'react-modal';
-import axios from 'axios'
+import Modal from 'react-bootstrap/Modal';
+import { Button } from 'react-bootstrap';
+import Form from "react-bootstrap/Form";
 import api from '../../service/api';
 
 
 function Index({ isOpen, dataFeed }) {
     const [modalIsOpen, setIsOpen] = useState(isOpen);
     const [txtMaterial, setTxtMaterial] = useState(dataFeed.material);
-    const [txtAssunto, setTxtAssunto] = useState(dataFeed.assnto);
+    const [txtAssunto, setTxtAssunto] = useState(dataFeed.assunto);
 
 
 
@@ -16,8 +17,7 @@ function Index({ isOpen, dataFeed }) {
         setIsOpen(false)
     }
 
-    async function handleSubmit(e) { //e visualiza o elemento que disparou a finção
-        e.preventDefault(); // evita que o formulario envie o dado e recarregue a pagina,
+    async function handleSubmit(dataFeed, e) { //e visualiza o elemento que disparou a finção
 
         const feedData = {
             "material": txtMaterial,
@@ -25,7 +25,7 @@ function Index({ isOpen, dataFeed }) {
             "id_material": dataFeed.id_material,
         }
 
-        const { data } = await api.put('http://localhost:3333/txtMaterial', feedData);
+        const { data } = await api.put('http://localhost:8080/material', feedData);
         alert(data.message);
         window.location.reload(true);
 
@@ -34,6 +34,62 @@ function Index({ isOpen, dataFeed }) {
     return (
         <>
             <div>
+                <Modal
+                    show={isOpen}
+                    backdrop="static"
+                >
+                    <div className="color-dele">
+                        <Modal.Header>
+                            <Modal.Title>Atualizar Material</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div className="input-field col s12">
+                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                    <Form.Control
+                                        placeholder="Material"
+                                        id="txtMaterial"
+                                        type="text"
+                                        className="validate"
+                                        value={txtMaterial}
+                                        onChange={({ target }) => setTxtMaterial(target.value)}
+                                    />
+                                </Form.Group>
+                                <div>
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Control
+                                            placeholder="Assunto"
+                                            id="txtAssunto"
+                                            type="text"
+                                            className="validate"
+                                            value={txtAssunto}
+                                            onChange={({ target }) => setTxtAssunto(target.value)}
+                                        />
+                                    </Form.Group>
+                                </div>
+                            </div>
+
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <div className="btn-modal-dele">
+                                <Button
+                                    variant="danger"
+                                    type="submit"
+                                    name="action"
+                                    onClick={() => { window.location.reload(true) }}
+                                >Cancelar</Button>
+
+                                <Button
+                                    variant="success"
+                                    type="submit"
+                                    name="action"
+                                    onClick={() => { handleSubmit() }}
+                                >Atualizar</Button>
+                            </div>
+                        </Modal.Footer>
+                    </div>
+                </Modal>
+            </div>
+            {/* <div>
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
@@ -74,7 +130,7 @@ function Index({ isOpen, dataFeed }) {
                         </form>
                     </div>
                 </Modal>
-            </div>
+            </div> */}
         </>
     )
 }
