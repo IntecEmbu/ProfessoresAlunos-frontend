@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Btn from '../../components/BotaoFlutuante';
 import Pesquisa from '../../components/Pesquisa/index.js';
 import ModalMaterialFeed from '../../components/ModalMaterialFeed/index.js';
+import ModalDeleteFeed from '../../components/ModalDeleteFeed/index.js';
+import ModalAtt from '../../components/ModalAttFeed/index.js';
 import Table from 'react-bootstrap/Table';
 import '../../styles/feedback1.css';
 import api2 from '../../config/configApi2.js'
@@ -15,6 +17,12 @@ function Index() {
 
   const [material, setMaterial] = useState([]);
   const [assunto, setAssunto] = useState([]);
+  const [feedItem, setFeedItem] = useState('');
+  const [loadModalAdd, setModalAdd] = useState(false);
+  const [loadModalDelete, setLoadModalDelete] = useState(false);
+  const [loadModalAtt, setLoadModalAtt] = useState(false);
+
+
 
   const usuarioLogadoString = sessionStorage.getItem('jwt')
   const usuarioLogado = jwt_decode(usuarioLogadoString)
@@ -29,12 +37,23 @@ function Index() {
       .appendChild(d)
       .setAttribute("style", "display: none");
   }
-  const [loadModalAdd, setModalAdd] = useState(false);
 
   function showAddModal() {
     setModalAdd(true);
-    console.log('sssss')
   }
+
+  function showDeleteFeed(material) {
+    setLoadModalDelete(true);
+    setFeedItem(material);
+
+  }
+
+  function showAttFeed(material) {
+    setLoadModalAtt(true);
+    setFeedItem(material);
+
+  }
+
   const [image, setImage] = useState('');
   const [status, setStatus] = useState({
     type: '',
@@ -103,6 +122,8 @@ function Index() {
   return (
     <>
       {loadModalAdd && <ModalMaterialFeed data-backdrop='static' isOpen={loadModalAdd} />}
+      {loadModalDelete && <ModalDeleteFeed isOpen={loadModalDelete} dataFeed={feedItem} />}
+      {loadModalAtt && <ModalAtt isOpen={loadModalAtt} dataFeed={feedItem} />}
 
       <Btn />
       <div className='pai-feedback'>
@@ -116,7 +137,10 @@ function Index() {
                   <Button>Ver Feedbacks</Button>
                 </Link>
 
-                <Button onClick={showAddModal} >Adicionar Material</Button>
+                <Button
+                  onClick={showAddModal}
+                >Adicionar Material
+                </Button>
               </>
             )}
           </div>
@@ -130,40 +154,56 @@ function Index() {
                                 <Button className='btnAvancar'>Avançar</Button>
                             </Link>
                         </div> */}
-          <Table striped bordered hover >
-            <thead>
-              <tr>
-                <th>id</th>
-                <th>Assunto</th>
-                <th>Materia</th>
-              </tr>
-            </thead>
-            <tbody >
+            <Table striped bordered hover >
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Assunto</th>
+                  <th>Materia</th>
+                </tr>
+              </thead>
+              <tbody >
               {
-                material.map((materia) => (
-                  <tr key={materia.id}>
-                    <td>{materia.id}</td>
-                    <td>{materia.assunto}</td>
-                    <td>{materia.material}</td>
-                    <td>
-                      <Link to="/Feedback2">
-                        <Button>Acessar</Button>
-                      </Link>
-                    </td>
-
-                    {/* Botao de excluir */}
-                    <td>
-                      <Button
-                        variant="danger"
-                        onClick={baixar}
-                      >Baixar pdf
-                      </Button>
-                    </td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </Table>
+                  material.map((materia) => (
+                    <tr key={materia.id_material}>
+                      <td>{materia.id_material}</td>
+                      <td>{materia.assunto}</td>
+                      <td>{materia.material}</td>
+                      <td>
+                        <Link to="/Feedback2">
+                          <Button>Acessar</Button>
+                        </Link>
+                      </td>
+                      <td>
+                        <Button
+                          variant="danger"
+                          onClick={baixar}
+                        >Baixar pdf
+                        </Button>
+                      </td>
+                      {user.registration_class === 'RM' && (
+                        <>
+                          <td>
+                            <Button
+                              variant="success"
+                              onClick={showAttFeed}
+                            >Atualizar
+                            </Button>
+                          </td>
+                          <td>
+                            <Button
+                              variant="danger"
+                              onClick={showDeleteFeed}
+                            >Deletar
+                            </Button>
+                          </td>
+                        </>
+                      )}
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </Table>
         </body>
         <div id="baixar">
 
