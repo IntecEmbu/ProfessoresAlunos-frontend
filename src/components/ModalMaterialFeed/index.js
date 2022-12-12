@@ -11,7 +11,7 @@ Modal.setAppElement('#root')
 
 function Index(isOpen, e) {
 
-    const [material, setMaterial] = useState('')
+    const [genero, setGenero] = useState('')
     const [assunto, setAssunto] = useState('')
     //modal
     const [modalIsOpen, setIsOpen] = useState(isOpen);
@@ -70,12 +70,11 @@ function Index(isOpen, e) {
 
     async function creatFeeback() {
         try {
-            await api.post('/material', {
-                material, assunto
+            await api.post('/gender', {
+                genero, assunto
             })
             window.location.reload(true)
             alert('Feedback criado com sucesso')
-            console.log(material)
         }
         catch (err) {
             alert(`Houve um erro: ${err}`)
@@ -103,8 +102,8 @@ function Index(isOpen, e) {
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
                                         <Form.Label>Matéria</Form.Label>
                                         <Form.Control
-                                            value={material}
-                                            onChange={e => setMaterial(e.target.value)}
+                                            value={genero}
+                                            onChange={e => setGenero(e.target.value)}
                                         />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">

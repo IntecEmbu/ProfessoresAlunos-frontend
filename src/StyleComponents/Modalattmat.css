@@ -1,9 +1,9 @@
-.color-dele{
+.modal-att-mat{
     background-color: #0b1d3f;
     width: 30vw;
-    height: 15rem;
+    height: 25rem;
     margin: auto;
-    margin-top: 10rem;
+    margin-top: 5rem;
     color: white;
     justify-content: center;
     text-align: center;
@@ -11,15 +11,20 @@
     padding: 2rem;
 }
 
-.btn-modal-dele{
+.btn-att-modal{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
+
 }
 
 .tem-certeza{
     margin-top: 2rem;
     font-size: smaller;
+}
+
+.form-modal-att-mat{
+    text-align: left;
 }

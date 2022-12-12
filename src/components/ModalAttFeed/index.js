@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import Modal from 'react-bootstrap/Modal';
-import { Button } from 'react-bootstrap';
+import Modal from 'react-modal';
+import axios from 'axios'
+import '../../StyleComponents/Modalattmat.css';
+import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
-import api from '../../service/api';
 
 
-function Index({ isOpen, dataFeed }) {
+
+function Index({ isOpen, dataGender }) {
     const [modalIsOpen, setIsOpen] = useState(isOpen);
-    const [txtMaterial, setTxtMaterial] = useState(dataFeed.material);
-    const [txtAssunto, setTxtAssunto] = useState(dataFeed.assunto);
+    const [txtGender, setTxtGender] = useState(dataGender.genero);
+    const [txtAssunto, setTxtAssunto] = useState(dataGender.assunto);
 
+
+    console.log(txtGender)
 
 
 
@@ -17,120 +21,90 @@ function Index({ isOpen, dataFeed }) {
         setIsOpen(false)
     }
 
-    async function handleSubmit(dataFeed, e) { //e visualiza o elemento que disparou a finção
+    async function handleSubmit(e) { //e visualiza o elemento que disparou a finção
+        e.preventDefault(); // evita que o formulario envie o dado e recarregue a pagina,
+        const genderData = {
+            "id_genero": dataGender.id_genero,
+            "genero": txtGender,
 
-        const feedData = {
-            "material": txtMaterial,
-            "assunto": txtAssunto,
-            "id_material": dataFeed.id_material,
         }
-
-        const { data } = await api.put('http://localhost:8080/material', feedData);
+        const { data } = await axios.put('http://localhost:8080/gender', genderData);
         alert(data.message);
-        window.location.reload(true);
+    }
 
+    async function handleSubmitAssunto(e) { //e visualiza o elemento que disparou a finção
+        e.preventDefault(); // evita que o formulario envie o dado e recarregue a pagina,
+        const genderData = {
+            "id_genero": dataGender.id_genero,
+            "assunto": txtAssunto,
+
+        }
+        const { data } = await axios.put('http://localhost:8080/gender/assunto', genderData);
+        alert(data.message);
     }
 
     return (
         <>
             <div>
                 <Modal
-                    show={isOpen}
-                    backdrop="static"
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    className='modal-att-mat'
                 >
-                    <div className="color-dele">
-                        <Modal.Header>
-                            <Modal.Title>Atualizar Material</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <div className="input-field col s12">
-                                <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Control
-                                        placeholder="Material"
-                                        id="txtMaterial"
-                                        type="text"
-                                        className="validate"
-                                        value={txtMaterial}
-                                        onChange={({ target }) => setTxtMaterial(target.value)}
-                                    />
-                                </Form.Group>
-                                <div>
+                    <h2>Editar Material</h2>
+                    <div className="row">
+                        <form className="col s12">
+                            <div className="row">
+                                <div className="form-modal-att-mat">
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Material</Form.Label>
                                         <Form.Control
-                                            placeholder="Assunto"
+                                            id="txtGender"
+                                            type="text"
+                                            className="validate"
+                                            value={txtGender}
+                                            onChange={({ target }) => setTxtGender
+                                                (target.value)}
+                                        />
+                                    </Form.Group>
+                                    <Button
+                                        variant="success"
+                                        type="submit"
+                                        name="action"
+                                        onClick={handleSubmit}
+                                    >Atualizar Material</Button>
+                                </div>
+                                <div className="form-modal-att-mat">
+                                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                                        <Form.Label>Assunto</Form.Label>
+                                        <Form.Control
                                             id="txtAssunto"
                                             type="text"
                                             className="validate"
                                             value={txtAssunto}
-                                            onChange={({ target }) => setTxtAssunto(target.value)}
+                                            onChange={({ target }) => setTxtAssunto
+                                                (target.value)}
                                         />
                                     </Form.Group>
+                                    <Button
+                                        variant="success"
+                                        type="submit"
+                                        name="action"
+                                        onClick={handleSubmitAssunto}
+                                    >Atualizar Assunto</Button>
                                 </div>
                             </div>
-
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <div className="btn-modal-dele">
+                            <div className="btn-att-modal">
                                 <Button
-                                    variant="danger"
-                                    type="submit"
-                                    name="action"
+                                    variant='danger'
+                                    className="btn modal-trigger"
                                     onClick={() => { window.location.reload(true) }}
-                                >Cancelar</Button>
-
-                                <Button
-                                    variant="success"
-                                    type="submit"
-                                    name="action"
-                                    onClick={() => { handleSubmit() }}
-                                >Atualizar</Button>
+                                >Fechar</Button>
                             </div>
-                        </Modal.Footer>
-                    </div>
-                </Modal>
-            </div>
-            {/* <div>
-                <Modal
-                    isOpen={modalIsOpen}
-                    onRequestClose={closeModal}
-                >
-                    <h2>Atualização de material</h2>
-                    <div className="row">
-                        <form className="col s12">
-                            <div className="row">
-                                <div className="input-field col s12">
-                                    <input
-                                        placeholder="Material"
-                                        id="txtMaterial"
-                                        type="text"
-                                        className="validate"
-                                        value={txtMaterial}
-                                        onChange={({ target }) => setTxtMaterial(target.value)}
-                                    />
-
-                                    <input
-                                        placeholder="Assunto"
-                                        id="txtAssunto"
-                                        type="text"
-                                        className="validate"
-                                        value={txtAssunto}
-                                        onChange={({ target }) => setTxtAssunto(target.value)}
-                                    />
-                                </div>
-                            </div>
-                            <button className="btn waves-effect waves-light"
-                                type="submit"
-                                name="action"
-                                onClick={handleSubmit}
-                            >Atualizar</button>
-                            <button
-                                className="btn modal-trigger"
-                                onClick={() => { window.location.reload(true) }}
-                            >Cancelar</button>
                         </form>
                     </div>
                 </Modal>
-            </div> */}
+            </div>
         </>
     )
 }
