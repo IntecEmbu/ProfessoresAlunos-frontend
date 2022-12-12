@@ -1,4 +1,4 @@
-.cont-btn{
+.cont-btn {
   position: fixed;
   margin-top: 10rem;
   margin-left: 13px;
@@ -8,7 +8,7 @@
   border-radius: 100vw;
 }
 
-.p-style{
+.p-style {
   color: #0b1d3f;
   font-weight: bold;
   font-size: smaller;
@@ -17,8 +17,8 @@
 
 }
 
-.btn-color{
+.btn-color {
   margin-top: 10px;
-  color:  #0b1d3f;
+  color: #0b1d3f;
 }
 

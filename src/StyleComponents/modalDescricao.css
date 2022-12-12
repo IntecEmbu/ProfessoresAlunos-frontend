@@ -1,0 +1,34 @@
+.form-modal-descricao{
+    background-color: #0b1d3f;
+    width: 50rem;
+    height: 30rem;
+    margin: auto;
+    margin-top: 2rem;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.btn-descricao-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+}
+
+.tem-certeza{
+    margin-top: 2rem;
+    font-size: smaller;
+}
+
+.form-modal-att-mat{
+    text-align: left;
+}
+
+.textarea-modal{
+    width: 40rem;
+    height: 20rem;
+    margin-top: 1rem;
+}

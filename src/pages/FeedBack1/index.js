@@ -31,14 +31,14 @@ function Index() {
   var user = usuarioLogado.infoUser.id_login
 
 
-  // const baixar = async e => {
-  //   let d = document.createElement("iframe");
-  //   d.setAttribute("src", "http://localhost:3333/dowload")
-  //   document
-  //     .querySelector("#baixar")
-  //     .appendChild(d)
-  //     .setAttribute("style", "display: none");
-  // }
+  const baixar = async e => {
+    let d = document.createElement("iframe");
+    d.setAttribute("src", "http://localhost:3333/dowload")
+    document
+      .querySelector("#baixar")
+      .appendChild(d)
+      .setAttribute("style", "display: none");
+  }
 
   function showAddModal() {
     setModalAdd(true);
@@ -55,62 +55,60 @@ function Index() {
 
   }
 
-  // const [image, setImage] = useState('');
-  // const [status, setStatus] = useState({
-  //   type: '',
-  //   mensagem: ''
-  // });
-  // const UploadImage = async e => {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append('image', image);
+  const [image, setImage] = useState('');
+  const [status, setStatus] = useState({
+    type: '',
+    mensagem: ''
+  });
+  const UploadImage = async e => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('image', image);
 
-  //   const headers = {
-  //     'headers': {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   }
+    const headers = {
+      'headers': {
+        'Content-Type': 'application/json'
+      }
+    }
 
-  //   await api2.post("/PostMat", formData, headers)
-  //     .then((response) => {
-  //       setStatus({
-  //         type: 'success',
-  //         mensagem: response.data.mensagem
-  //       });
-  //     }).catch((err) => {
-  //       if (err.response) {
-  //         setStatus({
-  //           type: 'error',
-  //           mensagem: err.response.data.mensagem
-  //         });
-  //       } else {
-  //         setStatus({
-  //           type: 'error',
-  //           mensagem: "Erro: Tente mais tarde!"
-  //         });
-  //       }
-  //     });
-  // }
-  // const [data, setData] = useState([]);
-  // const [url, setUrl] = useState('');
+    await api2.post("/PostMat", formData, headers)
+      .then((response) => {
+        setStatus({
+          type: 'success',
+          mensagem: response.data.mensagem
+        });
+      }).catch((err) => {
+        if (err.response) {
+          setStatus({
+            type: 'error',
+            mensagem: err.response.data.mensagem
+          });
+        } else {
+          setStatus({
+            type: 'error',
+            mensagem: "Erro: Tente mais tarde!"
+          });
+        }
+      });
+  }
+  const [data, setData] = useState([]);
+  const [url, setUrl] = useState('');
 
-  // const getImages = async () => {
+  const getImages = async () => {
 
-  //   await api2.get("/ListMat")
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setData(response.data.images);
-  //       setUrl(response.data.url);
-  //     }).catch((err) => {
-  //       console.log(err.response);
-  //     })
-  // }
+    await api2.get("/ListMat")
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data.images);
+        setUrl(response.data.url);
+      }).catch((err) => {
+        console.log(err.response);
+      })
+  }
 
-  // useEffect(() => {
-  //   getImages();
-  // }, []);
-
-  // useEffect(() => {
+  useEffect(() => {
+    getImages();
+  }, []);
 
   useEffect(() => {
 
@@ -173,7 +171,7 @@ function Index() {
                     <td>
                       <Button
                         variant="warning"
-                      // onClick={baixar}
+                        onClick={baixar}
                       >Baixar pdf
                       </Button>
                     </td>
@@ -210,6 +208,7 @@ function Index() {
     </>
   )
 }
+
 
 export default Index
 

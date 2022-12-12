@@ -46,14 +46,14 @@ function Index(e) {
                                 required />
                         </InputGroup>
                         <InputGroup className="mb-3" >
-                            <InputGroup.Text>Email Institucional:</InputGroup.Text>
+                            <InputGroup.Text>Email:</InputGroup.Text>
                             <Form.Control
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
                                 required />
                         </InputGroup>
                         <InputGroup className="mb-3">
-                            <InputGroup.Text>Material:</InputGroup.Text>
+                            <InputGroup.Text>Materia:</InputGroup.Text>
                             <Form.Control
                                 value={material}
                                 onChange={e => setMaterial(e.target.value)}

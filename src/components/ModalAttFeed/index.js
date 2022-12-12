@@ -48,7 +48,6 @@ function Index({ isOpen, dataGender }) {
             <div>
                 <Modal
                     isOpen={modalIsOpen}
-                    onRequestClose={closeModal}
                     className='modal-att-mat'
                 >
                     <h2>Editar Material</h2>
