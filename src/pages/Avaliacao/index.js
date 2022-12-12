@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Btn from '../../components/BotaoFlutuante'
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -7,6 +8,7 @@ import TextArea from '../../components/TextArea/index.js';
 import '../../styles/avaliacao.css';
 import { MdPictureAsPdf } from "react-icons/md";
 import { useReactToPrint } from "react-to-print";
+import jwt_decode from 'jwt-decode';
 import api from '../../service/api';
 
 
@@ -22,8 +24,8 @@ const App = () => {
   const [aluno, setAluno] = useState('');
   const [modulo, setModulo] = useState('');
   const [turma, setTurma] = useState('');
-  const [hab, setHab] = useState('');
-  const [professor, setProfessor] = useState('');
+  const [nivelTecnico, setNivelTecnico] = useState('');
+  const [orientador, setOrientador] = useState('');
   const [tema, setTema] = useState('');
   const [analise, setAnalise] = useState('');
   const [rm, setRm] = useState('');
@@ -34,6 +36,26 @@ const App = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const usuarioLogadoString = sessionStorage.getItem('jwt')
+  const usuarioLogado = jwt_decode(usuarioLogadoString)
+  var user = usuarioLogado.infoUser.id_login
+
+
+  async function createAvaliacao(e) {
+    e.preventDefault()
+    try {
+      await api.post('/avalicao', {
+        ano, aluno, modulo, turma, nivelTecnico, orientador, tema, analise, rm, dia, validacao
+      })
+      alert('Avaliacao cadastrada com sucesso')
+    }
+    catch (err) {
+
+      alert(`Houve um erro: ${err}`)
+    }
+  }
+
 
   return (
     <>
@@ -76,15 +98,15 @@ const App = () => {
             <InputGroup className="mb-3" >
               <InputGroup.Text>Habilitação Profissional Técnica de Nível Médio de Técnico em:</InputGroup.Text>
               <Form.Control
-                value={hab}
-                onChange={e => setHab(e.target.value)}
+                value={nivelTecnico}
+                onChange={e => setNivelTecnico(e.target.value)}
               />
             </InputGroup>
             <InputGroup className="mb-3" >
               <InputGroup.Text>Professor Responsável:</InputGroup.Text>
               <Form.Control
-                value={professor}
-                onChange={e => setProfessor(e.target.value)}
+                value={orientador}
+                onChange={e => setOrientador(e.target.value)}
               />
             </InputGroup>
             <InputGroup className="mb-3" >
@@ -134,7 +156,7 @@ const App = () => {
           </div>
         </div>
         <Button className='btn-avaliacao' onClick={handlePrint}> <MdPictureAsPdf /> Gerar PDF </Button>
-        <Button className='btn-avaliacao-env'> Enviar </Button>
+        <Button className='btn-avaliacao-env' onClick={createAvaliacao}> Enviar </Button>
       </div>
 
     </>

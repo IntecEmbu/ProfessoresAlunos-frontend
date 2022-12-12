@@ -29,7 +29,7 @@ function Index({ isOpen, dataGender }) {
                                         <textarea
                                             id="txtGender"
                                             type="text"
-                                            className="textarea-modal"
+                                            className="textarea-modal-descricao"
                                             value={txtGender}
                                             onChange={({ target }) => setTxtGender
                                                 (target.value)}>
