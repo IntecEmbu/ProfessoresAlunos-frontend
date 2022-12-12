@@ -8,29 +8,22 @@ import api from '../../service/api';
 
 
 
-function Index({ isOpen}) {
+function Index({ isOpen }) {
     const [modalIsOpen, setIsOpen] = useState(isOpen);
     const [analiseGt, setAnaliseGt] = useState('');
     const [nota, setNota] = useState('');
 
-
     async function createNota(e) {
-        e.preventDefault()
         try {
-          await api.post('/nota', {
-            analiseGt, nota
-          })
-          alert('Avaliacao cadastrada com sucesso')
+            await api.post('/nota', {
+                analiseGt, nota
+            })
+            alert('Avaliação realizada com sucesso')
         }
         catch (err) {
-    
-          alert(`Houve um erro: ${err} `)
+                alert(`Houve um erro: ${err}`)
         }
-      }
-
-
-
-
+    }
     function closeModal() {
         setIsOpen(false)
     }
@@ -47,12 +40,12 @@ function Index({ isOpen}) {
                         <form className="col s12">
                             <div className="row">
                                 <div className="vai">
-                                <label>Analise:</label>
+                                    <label>Analise:</label>
                                     <div className="text-area-ava">
                                         <textarea
-                                        value={analiseGt}
-                                        onChange={e => setAnaliseGt(e.target.value)} 
-                                        className="text-area-analise-modal">
+                                            value={analiseGt}
+                                            onChange={e => setAnaliseGt(e.target.value)}
+                                            className="text-area-analise-modal">
                                         </textarea>
                                     </div>
                                     <div>
@@ -61,6 +54,7 @@ function Index({ isOpen}) {
                                             <Form.Control
                                                 value={nota}
                                                 onChange={e => setNota(e.target.value)}
+                                                maxLength={2}
                                                 type="text"
                                                 required />
                                         </Form.Group>
