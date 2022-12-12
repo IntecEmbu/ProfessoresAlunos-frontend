@@ -167,7 +167,7 @@ function Index() {
                     <td>{gende.assunto}</td>
                     <td>
                       <Link to="/Feedback2">
-                        <Button>Acessar</Button>
+                        <Button>Dar Feedback</Button>
                       </Link>
                     </td>
                     <td>
